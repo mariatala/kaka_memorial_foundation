@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Header from './Header'; // Make sure the path is correct
 import { FaFacebook } from 'react-icons/fa';
 import { FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { Twinkle_Star } from 'next/font/google';
 import { FaInstagram } from 'react-icons/fa';
 
 const HeroSection = () => {

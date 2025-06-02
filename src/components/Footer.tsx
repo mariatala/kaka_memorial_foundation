@@ -1,6 +1,5 @@
 import React from 'react';
 import { Mail, PhoneCall, MapPin, MessageCircleHeart } from 'lucide-react';
-import Link from 'next/link';
 
 const Footer = () => {
 	return (

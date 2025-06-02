@@ -2,6 +2,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { HeartHandshake, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const Header = () => {
 	const [isOpen, setIsOpen] = React.useState(false);
@@ -31,7 +32,7 @@ const Header = () => {
 			<div className="flex justify-between items-center w-full transition-all duration-300">
 				{/* Logo */}
 				<Link href="/" className="flex items-center">
-					<img
+					<Image
 						src="/Logo.png"
 						alt="Kaka Memorial Foundation Logo"
 						className={`h-auto transition-all duration-300 ${
