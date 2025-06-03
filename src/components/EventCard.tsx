@@ -27,7 +27,7 @@ const EventCard = ({
 			/>
 
 			{/* Sliding Overlay Content */}
-			<div className="absolute top-0 bottom-0 right-0 p-4 sm:p-5 bg-accent-three-light/90 w-[90%] flex flex-col justify-start items-start gap-4 border-t-4 border-b-4 border-primary transform transition-transform duration-500 ease-in-out group-hover:translate-x-full">
+			<div className="absolute top-0 bottom-0 right-0 p-4 sm:p-5 bg-accent-three-light/90 w-[90%] flex flex-col justify-start items-start gap-4 border-t-4 border-b-4 border-primary transform transition-transform duration-500 ease-in-out group-hover:translate-x-full group-active:translate-x-full group-focus-within:translate-x-full">
 				<div className="text-primary text-base sm:text-lg md:text-xl font-semibold tracking-wide">
 					{title}
 				</div>

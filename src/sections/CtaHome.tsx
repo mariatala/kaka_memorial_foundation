@@ -14,7 +14,7 @@ const CtaHome = () => {
 
 			<div className="w-full min-w-48 inline-flex flex-col md:flex-row justify-evenly items-start py-8 gap-8 md:gap-20">
 				{/* Donate Section */}
-				<div className="w-full h-full md:w-1/2 px-10 py-4 sm:py-8 inline-flex flex-col justify-start items-center gap-6 md:gap-12">
+				<div className="w-full h-full md:w-1/2 px-2 md:px-10 py-4 sm:py-8 inline-flex flex-col justify-start items-center gap-6 md:gap-12">
 					<div className="flex flex-col justify-start items-center gap-3 sm:gap-6">
 						<div className="text-center text-primary text-3xl font-[inter] font-medium">
 							Donate
@@ -24,7 +24,7 @@ const CtaHome = () => {
 							hope to underserved rural communities.
 						</div>
 					</div>
-					<div className="px-4 py-1  bg-primary flex justify-center items-center rounded-xs hover:bg-secondary transition-colors duration-500 ease-in-out cursor-pointer">
+					<div className="px-4 py-1 bg-primary flex justify-center items-center rounded-xs hover:bg-secondary active:bg-secondary focus:bg-secondary transition-colors duration-500 ease-in-out cursor-pointer">
 						<Link href="/join_us" className="text-light">
 							DONATE
 						</Link>
@@ -33,7 +33,7 @@ const CtaHome = () => {
 
 				{/* Volunteer Section */}
 				<div className="w-full h-full md:w-1/2 px-10 py-4 sm:py-8 inline-flex flex-col justify-start items-center gap-6 md:gap-12">
-					<div className="flex flex-col justify-start items-center gap-3 sm:gap-6">
+					<div className="flex flex-col px-2 md:px-10 justify-start items-center gap-3 sm:gap-6">
 						<div className="text-center text-primary text-3xl font-[inter] font-medium tracking-wider">
 							Volunteer
 						</div>
@@ -43,7 +43,7 @@ const CtaHome = () => {
 							in need.
 						</div>
 					</div>
-					<div className="px-4 py-1  bg-primary flex justify-center items-center rounded-xs hover:bg-secondary transition-colors duration-500 ease-in-out cursor-pointer">
+					<div className="px-4 py-1 bg-primary flex justify-center items-center rounded-xs hover:bg-secondary active:bg-secondary focus:bg-secondary transition-colors duration-500 ease-in-out cursor-pointer">
 						<Link href="/join_us" className="text-light">
 							VOLUNTEER
 						</Link>
