@@ -21,20 +21,20 @@ const EventsCarousel: React.FC = () => {
 	};
 
 	return (
-		<section className="w-full my-24 px-4 overflow-hidden">
+		<section className="w-full px-4 md:px-16 overflow-hidden scrollbar-hide">
 			<div className="relative">
 				{/* Navigation Buttons - Visible on All Screens */}
-				<div className="flex justify-between absolute top-1/2 -translate-y-1/2 w-full z-10 px-1 sm:px-4">
+				<div className="flex justify-between absolute top-1/2 -translate-y-1/2 w-full z-10 px-1">
 					<button
 						onClick={() => scroll('left')}
-						className="bg-primary-dark text-white p-2 rounded-full hover:bg-secondary shadow-md"
+						className="bg-primary text-white p-2 size-8 rounded-full hover:bg-secondary grid content-center"
 						aria-label="Scroll Left"
 					>
 						←
 					</button>
 					<button
 						onClick={() => scroll('right')}
-						className="bg-primary-dark text-white p-2 rounded-full hover:bg-secondary shadow-md"
+						className="bg-primary text-white p-2 size-8 rounded-full hover:bg-secondary grid content-center"
 						aria-label="Scroll Right"
 					>
 						→
@@ -44,7 +44,7 @@ const EventsCarousel: React.FC = () => {
 				{/* Carousel Container */}
 				<div
 					ref={carouselRef}
-					className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x scrollbar-hide"
+					className="flex  gap-8 md:gap-16  px-4 md:px-12 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x no-scrollbar"
 				>
 					<div className="min-w-[90%] md:min-w-[33%] snap-center shrink-0">
 						<EventCard

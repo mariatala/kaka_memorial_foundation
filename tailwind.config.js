@@ -17,5 +17,5 @@ module.exports = {
 			},
 		}, // add custom styles here
 	},
-	plugins: [require('tailwind-scrollbar-hide')],
+	plugins: [require('tailwind-scrollbar')],
 };
