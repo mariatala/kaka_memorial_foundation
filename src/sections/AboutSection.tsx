@@ -4,18 +4,18 @@ import Image from 'next/image';
 
 const AboutSection = () => {
 	return (
-		<div className="w-full px-8 md:px-32 py-8 md:py-16 inline-flex flex-col md:flex-row justify-start items-center gap-8 md:gap-28 my-12">
+		<div className="w-full px-8 md:px-32 py-8 md:py-16 inline-flex flex-col md:flex-row justify-between items-center gap-8 md:gap-32 my-16">
 			<div className="flex-1 inline-flex flex-col justify-start items-start gap-8">
 				<div className="w-full md:w-[483px] flex flex-col justify-start items-start gap-4">
-					<div className="text-indigo-900 text-3xl sm:text-4xl font-normal font-['Inter'] leading-3 uppercase tracking-widest">
+					<div className="text-primary text-3xl sm:text-5xl font-normal font-['Inter'] leading-4 uppercase tracking-widest">
 						ABOUT
 					</div>
-					<div className="text-lime-500 text-xl sm:text-2xl font-semibold font-['Inter'] tracking-wide">
+					<div className="text-secondary text-xl sm:text-3xl font-semibold font-['Nunito'] tracking-wide">
 						Our Organization
 					</div>
 				</div>
 				<div className="self-stretch justify-start">
-					<span className="text-indigo-900 text-base sm:text-lg font-normal font-['Lao_Sans_Pro'] leading-8 sm:leading-12 tracking-wide">
+					<span className="text-primary text-base sm:text-lg font-medium font-['Nunito'] leading-8 sm:leading-12 tracking-wide">
 						Kaka Memorial Foundation works to improve rural communities in
 						Nigeria by advancing education, clean water access, and strong
 						partnerships. Our efforts align with the United Nations Sustainable
@@ -27,13 +27,13 @@ const AboutSection = () => {
 						<br />
 					</span>
 
-					<span className="block text-indigo-900 text-lg mt-4 font-semibold font-['Inter'] leading-[48px] tracking-wide">
+					<span className="block text-primary text-lg mt-4 font-semibold font-['Inter'] leading-[48px] tracking-wide hover:underline decoration-secondary">
 						<Link href={'/about'}>Read More</Link>
 					</span>
 				</div>
 			</div>
 
-			<div className="w-full md:w-[494.76px] h-64 sm:h-96 mix-blend-luminosity border-t-[24px] border-l-[24px] border-lime-500">
+			<div className="w-full md:w-[494.76px] h-64 sm:h-96 mix-blend-luminosity border-t-[24px] border-l-[24px] border-secondary">
 				<Image
 					src="/about.jpg"
 					alt="About Us"

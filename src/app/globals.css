@@ -2,7 +2,7 @@
 
 @theme {
 	--color-primary: oklch(0.3764 0.1059 282.87);
-  --color-primary-dark: #081127;
+	--color-primary-dark: #081127;
 	--color-secondary: #96bd18;
 	--color-light: #f9f9f9;
 	--color-accent-one: #685b9a;
@@ -12,7 +12,7 @@
 
 @theme {
 	--font-family-sans: 'Inter', sans-serif;
-	--font-family-serif: 'Merriweather', serif;
+	--font-family-serif: 'Nunito', serif;
 	--font-family-mono: 'Courier New', monospace;
 	--font-family-display: 'Playfair Display', serif;
 }
@@ -25,7 +25,7 @@
 }
 
 @body {
-	font-family: var(--font-family-sans);
+	font-family: var(--font-family-serif);
 	font-size: var(--font-size-base);
 	color: var(--color-midnight);
 	background-color: var(--color-bermuda);

@@ -35,6 +35,8 @@ const Header = () => {
 					<Image
 						src="/Logo.png"
 						alt="Kaka Memorial Foundation Logo"
+						width={100}
+						height={100}
 						className={`h-auto transition-all duration-300 ${
 							scrolled ? 'w-20' : 'w-28'
 						}`}
