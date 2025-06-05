@@ -24,7 +24,7 @@ const HistorySection = () => {
 
 				{/* Content Block */}
 				<div
-					className={`w-full md:w-2/3 text-gray-700 space-y-6 leading-8 text-sm md:text-base ${gowun.className}`}
+					className={`w-full md:w-2/3 text-gray-700 space-y-6 leading-8  md:text-base ${gowun.className}`}
 				>
 					<p>
 						Kaka Memorial Foundation is a non-profit organization founded in
