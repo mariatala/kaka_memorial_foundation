@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import Header from '@/components/Header';
 import { Niconne, Gowun_Dodum, Inter } from 'next/font/google';
 import { HandHeart, Users, Megaphone, Handshake } from 'lucide-react'; // Thin & classy icons from lucid
@@ -7,20 +8,19 @@ import Image from 'next/image';
 import CausesSection from '@/components/CausesCard';
 import { GraduationCap, HeartHandshake, HelpingHand } from 'lucide-react';
 
-const niconne = Niconne({ weight: '400', subsets: ['latin'] });
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 const inter = Inter({ weight: '400', subsets: ['latin'] });
 
 const CausesPage = () => {
 	const causesIcons = [
-		<HandHeart className="w-20 h-20 text-secondary" strokeWidth={1} />,
-		<Users className="w-20 h-20 text-secondary" strokeWidth={1} />,
-		<Megaphone className="w-20 h-20 text-secondary" strokeWidth={1} />,
-		<Handshake className="w-20 h-20 text-secondary" strokeWidth={1} />,
+		<HandHeart key="handheart" className="w-20 h-20 text-secondary" strokeWidth={1} />,
+		<Users key="users" className="w-20 h-20 text-secondary" strokeWidth={1} />,
+		<Megaphone key="megaphone" className="w-20 h-20 text-secondary" strokeWidth={1} />,
+		<Handshake key="handshake" className="w-20 h-20 text-secondary" strokeWidth={1} />,
 	];
 	return (
 		<div className="bg-white text-primary font-['Inter']">
-			{/* Header Banner Section */}
+	
 			<section className="w-full inline-flex  h-120 justify-start items-center">
 				<Header />
 				<div className="w-full inline-flex items-center ">
@@ -218,7 +218,7 @@ const CausesPage = () => {
 								className="relative bg-white shadow-lg border-l-2 border-primary rounded-xl p-6 md:p-10 flex  gap-6 items-start"
 							>
 								<div className="text-secondary flex-shrink-0">
-									{causesIcons[index]}
+									{React.cloneElement(causesIcons[index], { key: index })}
 								</div>
 								<div className="flex flex-col space-y-4">
 									<h3
