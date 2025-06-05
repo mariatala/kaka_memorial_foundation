@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Header from '@/components/Header';
-import { Niconne, Gowun_Dodum, Inter } from 'next/font/google';
+import { Gowun_Dodum, Inter } from 'next/font/google';
 import { HandHeart, Users, Megaphone, Handshake } from 'lucide-react'; // Thin & classy icons from lucid
 import { LocateFixed } from 'lucide-react';
 import Image from 'next/image';
