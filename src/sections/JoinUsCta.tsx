@@ -1,12 +1,11 @@
 'use client';
 
 import React from 'react';
-import { HandHeart, Megaphone } from 'lucide-react';
+import { HandHeart } from 'lucide-react';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { Niconne, Gowun_Dodum, Inter } from 'next/font/google';
+import { Gowun_Dodum, Inter } from 'next/font/google';
 
-const niconne = Niconne({ weight: '400', subsets: ['latin'] });
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 const inter = Inter({ weight: '400', subsets: ['latin'] });
 

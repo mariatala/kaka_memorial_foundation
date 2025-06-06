@@ -1,10 +1,7 @@
 import React from 'react';
 import EventsCarousel from '@/components/EventsCarausel';
-import { Inter, Gowun_Dodum } from 'next/font/google';
-const inter = Inter({
-	weight: ['200', '300', '400', '500', '600', '700', '800'],
-	subsets: ['latin'],
-});
+import { Gowun_Dodum } from 'next/font/google';
+
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 
 const RecentProjects = () => {

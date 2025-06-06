@@ -5,10 +5,7 @@ import StatsSection from '@/sections/StatsSection';
 import CtaHome from '@/sections/CtaHome';
 import RecentProjects from '@/sections/RecentProjects';
 import JoinUsSection from '@/sections/JoinUsCta';
-import { Inter, Gowun_Dodum } from 'next/font/google';
-import { HandHeart } from 'lucide-react';
-const inter = Inter({ weight: '400', subsets: ['latin'] });
-const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
+
 export default function Home() {
 	return (
 		<main className=" min-h-screen flex flex-col  items-center sm:items-start">
