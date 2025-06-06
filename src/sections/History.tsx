@@ -7,7 +7,7 @@ const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 
 const HistorySection = () => {
 	return (
-		<section className="relative w-full bg-gradient-to-br from-light via-accent-three to-light  py-12 md:py-24 px-4 md:px-24">
+		<section className="relative w-full py-12 md:py-24 px-4 md:px-24">
 			<div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start  gap-8 md:gap-12">
 				{/* Title Block */}
 				<div className="w-full md:w-1/3 space-y-2">

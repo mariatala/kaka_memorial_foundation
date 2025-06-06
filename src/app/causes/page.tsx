@@ -24,22 +24,22 @@ const CausesPage = () => {
 	const causesIcons = [
 		<HandHeart
 			key="handheart"
-			className="w-12 h-12 md:w-20 md:h-20 text-secondary"
+			className="w-8 h-8 sm:w-12 sm:h-12 md:w-20 md:h-20 text-secondary"
 			strokeWidth={1}
 		/>,
 		<Users
 			key="users"
-			className="w-12 s: h-12  md:w-20 md:h-20 text-secondary"
+			className="w-8 h-8 sm:w-12 sm:h-12 md:w-20 md:h-20 text-secondary"
 			strokeWidth={1}
 		/>,
 		<Megaphone
 			key="megaphone"
-			className="w-12 h-12 md:w-20 md:h-20 text-secondary"
+			className="w-8 h-8 sm:w-12 sm:h-12 md:w-20 md:h-20 text-secondary"
 			strokeWidth={1}
 		/>,
 		<Handshake
 			key="handshake"
-			className="w-12 h-12 md:w-20 md:h-20 text-secondary"
+			className="w-8 h-8 sm:w-12 sm:h-12 md:w-20 md:h-20 text-secondary"
 			strokeWidth={1}
 		/>,
 	];
@@ -212,9 +212,9 @@ const CausesPage = () => {
 							You Can Be A Part Of Us
 						</h4>
 					</div>
-					<div className="w-full flex justify-center mx-auto px-6 md:px-12 py-10 space-y-8">
+					<div className="w-full flex justify-center mx-auto px-4 md:px-12 py-10 space-y-8">
 						<p
-							className={`${gowun.className} text-lg leading-8 tracking-wide text-center px-4 w-full lg:w-2/3`}
+							className={`${gowun.className} text-lg leading-8 tracking-wide text-center sm:px-4 w-full lg:w-2/3`}
 						>
 							Kaka Memorial Foundation actively engages in advocacy that
 							promotes social justice, human rights, and sustainable

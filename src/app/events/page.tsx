@@ -14,7 +14,7 @@ const EventsPage = () => {
 				<Header />
 				<div className="w-full flex flex-col  md:flex-row items-center">
 					<Image
-						src="/map-1.png"
+						src="/joinUs.jpg"
 						alt="Kaka Memorial Foundation Logo"
 						width={500}
 						height={500}
@@ -32,7 +32,10 @@ const EventsPage = () => {
 							Empowering Lives Through Education, Clean Water, and Partnerships
 						</p>
 						<p>
-							Kaka Memorial Foundation Consistently brings to life the ideals of humanity. Through advocacy and interventions, we envision reaching out to communities so as to deliberately connect  stakeholders in order to achieve real impact in sustainable dimensions of growth.
+							Kaka Memorial Foundation Consistently brings to life the ideals of
+							humanity. Through advocacy and interventions, we envision reaching
+							out to communities so as to deliberately connect stakeholders in
+							order to achieve real impact in sustainable dimensions of growth.
 						</p>
 					</div>
 				</div>

@@ -41,20 +41,20 @@ const Footer = () => {
 							</p>
 							<div className="flex flex-col gap-4 text-sm font-light">
 								<p className="flex items-center gap-2">
-									<Mail />{' '}
+									<Mail />
 									<a href="mailto:kakafoundation@gmail.com">
 										kakafoundation@gmail.com
 									</a>
 								</p>
-								<p className="flex items-center gap-4">
+								<p className="flex items-center gap-2">
 									<PhoneCall />
 									<a href="tel:+1234567890">+1 (234) 567-890</a>
 								</p>
-								<p className="flex items-center gap-4">
+								<p className="flex items-center gap-2">
 									<MapPin />
 									123 Charity Lane, City, State, Zip Code
 								</p>
-								<p className="flex items-center gap-4">
+								<p className="flex items-center gap-2">
 									<MessageCircleHeart />{' '}
 									<a href="https://wa.me/1234567890">+1 (234) 567-890</a>
 								</p>
