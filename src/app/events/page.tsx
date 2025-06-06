@@ -31,6 +31,9 @@ const EventsPage = () => {
 						>
 							Empowering Lives Through Education, Clean Water, and Partnerships
 						</p>
+						<p>
+							Kaka Memorial Foundation Consistently brings to life the ideals of humanity. Through advocacy and interventions, we envision reaching out to communities so as to deliberately connect  stakeholders in order to achieve real impact in sustainable dimensions of growth.
+						</p>
 					</div>
 				</div>
 			</section>

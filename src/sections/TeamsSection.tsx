@@ -16,7 +16,6 @@ interface TeamSectionProps {
 const TeamSection: React.FC<TeamSectionProps> = ({
 	gowunFontClass,
 	niconneFontClass,
-	titleFontClass = '',
 }) => {
 	return (
 		<section className="our-team w-full bg-gradient-to-b from-accent-three-light to-white  py-12 md:py-24">
