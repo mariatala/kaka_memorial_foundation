@@ -1,16 +1,25 @@
 import React from 'react';
 import EventsCarousel from '@/components/EventsCarausel';
+import { Inter, Gowun_Dodum } from 'next/font/google';
+const inter = Inter({
+	weight: ['200', '300', '400', '500', '600', '700', '800'],
+	subsets: ['latin'],
+});
+const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 
 const RecentProjects = () => {
 	return (
 		<div className="w-full inline-flex flex-col justify-start items-center gap-24  bg-accent-three-light py-8 md:pt-16 md:pb-32">
-			<div className="flex flex-col justify-start items-center">
-				<div className="text-center text-primary text-3xl sm:text-4xl font-semibold font-['Inter'] uppercase">
+			<div className="w-full  flex flex-col justify-center items-center gap-2">
+				<h3
+					className={`text-3xl md:text-4xl text-center tracking-widest uppercase text-primary ${gowun.className}`}
+				>
 					Recent Advocacy / Projects
-				</div>
-				<div className="text-center text-secondary text-lg sm:text-2xl italic tracking-wider">
+				</h3>
+				<div className="w-16 h-1 bg-secondary rounded-full" />
+				<h4 className="text-xl text-secondary font-semibold tracking-wide text-center mt-2">
 					Take a stand — support ethical, people-first development
-				</div>
+				</h4>
 			</div>
 
 			{/* Carousel inserted here */}

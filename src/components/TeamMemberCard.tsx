@@ -3,7 +3,17 @@ import React from 'react';
 import Image from 'next/image';
 
 
-const TeamMemberCard = ({
+interface TeamMemberCardProps {
+	imageSrc: string;
+	altText: string;
+	description: string;
+	name: string;
+	role: string;
+	gowunFontClass?: string;
+	niconneFontClass?: string;
+}
+
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
 	imageSrc,
 	altText,
 	description,

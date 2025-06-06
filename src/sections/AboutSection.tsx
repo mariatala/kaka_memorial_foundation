@@ -1,21 +1,33 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Inter, Gowun_Dodum } from 'next/font/google';
+const inter = Inter({
+	weight: ['200', '300', '400', '500', '600', '700', '800'],
+	subsets: ['latin'],
+});
+const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 
 const AboutSection = () => {
 	return (
-		<div className="w-full px-8 md:px-32 py-8 md:py-16 inline-flex flex-col md:flex-row justify-between items-center gap-8 md:gap-32 my-16">
+		<div className="w-full px-8 md:px-32 py-8 md:py-16 inline-flex flex-col xl:flex-row justify-between items-center gap-8 md:gap-32 my-16">
 			<div className="flex-1 inline-flex flex-col justify-start items-start gap-8">
-				<div className="w-full md:w-[483px] flex flex-col justify-start items-start gap-4">
-					<div className="text-primary text-3xl sm:text-5xl font-normal font-['Inter'] leading-4 uppercase tracking-widest">
-						ABOUT
-					</div>
-					<div className="text-secondary text-xl sm:text-3xl font-semibold font-['Nunito'] tracking-wide">
+				<div className="w-full  flex flex-col justify-center items-start gap-2">
+					<h3
+						className={`text-3xl md:text-5xl  tracking-widest uppercase text-primary ${gowun.className}`}
+					>
+						About
+					</h3>
+					<div className="w-16 h-1 bg-secondary rounded-full" />
+					<h4 className="text-xl text-secondary font-semibold tracking-wide mt-2">
 						Our Organization
-					</div>
+					</h4>
 				</div>
+
 				<div className="self-stretch justify-start">
-					<span className="text-primary text-base sm:text-lg font-medium font-['Nunito'] leading-8 sm:leading-12 tracking-wide">
+					<span
+						className={`text-primary md:text-lg text-base font-medium  leading-10 tracking-wide ${gowun.className}`}
+					>
 						Kaka Memorial Foundation works to improve rural communities in
 						Nigeria by advancing education, clean water access, and strong
 						partnerships. Our efforts align with the United Nations Sustainable
@@ -27,21 +39,30 @@ const AboutSection = () => {
 						<br />
 					</span>
 
-					<span className="block text-primary text-lg mt-4 font-semibold font-['Inter'] leading-[48px] tracking-wide hover:underline decoration-secondary">
+					<span
+						className={`block text-primary text-lg mt-4 font-semibold ${inter.className} animate-bounce leading-8 tracking-wide hover:underline decoration-secondary`}
+					>
 						<Link href={'/about'}>Read More</Link>
 					</span>
 				</div>
 			</div>
 
-			<div className="w-full md:w-[494.76px] h-64 sm:h-96 mix-blend-luminosity border-t-[24px] border-l-[24px] border-secondary">
+			<div className="relative group w-full md:max-w-md h-64 sm:h-96 mx-auto rounded-md overflow-hidden shadow-xl border-[6px] border-secondary bg-white">
+				{/* Decorative top-left accent frame */}
+				<div className="absolute -top-5 -left-5 w-20 h-20 border-t-[10px] border-l-[10px] border-brightTwo z-10 rounded-tr-[40px]"></div>
+
+				{/* Image */}
 				<Image
 					src="/about.jpg"
 					alt="About Us"
-					className="w-full h-full object-cover"
 					width={494.76}
 					height={384}
 					loading="lazy"
+					className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
 				/>
+
+				{/* Overlay (Optional Classy Tint) */}
+				<div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-500 mix-blend-multiply pointer-events-none" />
 			</div>
 		</div>
 	);

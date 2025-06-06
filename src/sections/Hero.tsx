@@ -5,6 +5,12 @@ import Header from '../components/Header'; // Make sure the path is correct
 import { FaFacebook } from 'react-icons/fa';
 import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
+import { Inter, Gowun_Dodum } from 'next/font/google';
+const inter = Inter({
+	weight: ['200', '300', '400', '500', '600', '700', '800'],
+	subsets: ['latin'],
+});
+const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 
 const HeroSection = () => {
 	return (
@@ -55,13 +61,18 @@ const HeroSection = () => {
 				</div>
 
 				{/* Hero Text Content */}
-				<div className="flex flex-col md:justify-center justify-start gap-4 text-white  w-5/6 xl:w-2/3 bg-secondary px-3 md:px-6 lg:px-12 py-6 rounded-sm md:rounded-none">
-					<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-['Nunito'] font-semibold text-center md:text-justify  tracking-wider uppercase text-primary">
+				<div className="flex flex-col justify-center items-center md:items-start  gap-2 text-white  w-5/6 xl:w-2/3 bg-secondary px-3 md:px-6 lg:px-12 py-6 rounded-sm md:rounded-none">
+					<h3
+						className={`text-3xl lg:text-4xl xl:text-5xl text-center md:text-start tracking-widest uppercase text-primary ${inter.className}`}
+					>
 						Connecting Communities
-					</h1>
-					<p className="text-lg md:text-2xl font-medium text-center md:text-justify tracking-wider font-['Inter']">
+					</h3>
+					<div className="w-16 h-1 bg-light rounded-full" />
+					<h4
+						className={` text-lg sm:text-xl text-light  tracking-wide mt-2  ${inter.className}`}
+					>
 						Engaging Stakeholders For Real Impact
-					</p>
+					</h4>
 				</div>
 			</div>
 		</section>

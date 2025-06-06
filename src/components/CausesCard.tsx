@@ -35,9 +35,9 @@ const EducationSection: React.FC<EducationSectionProps> = ({
 	cards,
 }) => {
 	return (
-		<div className="w-full max-w-7xl mx-auto px-6 md:px-16 py-16 bg-accent-three-light rounded-sm  mt-16  flex flex-col gap-16">
+		<div className="w-full  mx-auto px-6 md:px-16 py-16 bg-accent-three-light rounded-sm  mt-8 flex flex-col gap-16">
 			{/* Top Section */}
-			<div className="flex flex-col lg:flex-row gap-8 items-center">
+			<div className="flex flex-col md:flex-row gap-8 items-start">
 				<Image
 					className="w-full max-w-xs object-cover rounded-lg"
 					src={imageSrc}
@@ -45,7 +45,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({
 					width={260}
 					height={295}
 				/>
-				<div className="flex-1 flex flex-col gap-6 text-center lg:text-left">
+				<div className="flex-1 flex flex-col gap-6 text-center md:text-left">
 					<div className="space-y-2">
 						<h2
 							className={`text-2xl md:text-3xl uppercase text-primary ${gowun.className}`}
@@ -82,7 +82,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({
 									{card.title}
 								</h4>
 							</div>
-							<p className="text-gray-700 text-sm leading-relaxed">
+							<p className="text-primary text-sm leading-relaxed">
 								{card.description}
 							</p>
 							<button className="self-start text-sm font-medium text-secondary hover:underline transition">

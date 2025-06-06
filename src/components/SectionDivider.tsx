@@ -1,38 +1,66 @@
 import React from 'react';
+import Link from 'next/link';
+import { Inter, Gowun_Dodum } from 'next/font/google';
+const inter = Inter({
+	weight: ['200', '300', '400', '500', '600', '700', '800'],
+	subsets: ['latin'],
+});
+const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
+import { FaRegLightbulb } from 'react-icons/fa';
 
 const SectionDivider = () => {
 	return (
-		<div className="w-full flex items-center justify-between flex-wrap h-fit m-0 p-0">
-			<div className=" w-full md:flex-1 h-full px-12 md:px-24 py-8 bg-secondary inline-flex flex-col justify-center items-center">
-				<div className="flex flex-col justify-center gap-4 items-center">
-					<div className="text-stone-50 text-3xl text-center font-medium font-['Inter'] tracking-wider">
-						Our Mission
-					</div>
-					<div className="text-slate-50 text-lg text-center font-['Nunito'] tracking-wide">
-						Our Goal, Vision and Commitment
-					</div>
-				</div>
-			</div>
-			<div className=" w-full md:flex-1 h-full px-12 md:px-24 py-8 bg-primary inline-flex flex-col justify-center items-center group">
-				<div className="flex flex-col justify-center gap-4 items-center">
-					<div className="text-stone-50 text-3xl text-center  font-['Inter'] tracking-wider">
-						Our Events
-					</div>
-					<div className="text-slate-50 text-lg text-center  font-['Nunito'] tracking-wide">
-						Register and Help Make Change
-					</div>
-				</div>
-			</div>
-			<div className=" w-full md:flex-1 h-full px-12 md:px-24 py-8 bg-accent-two inline-flex flex-col justify-center items-center">
-				<div className="flex flex-col justify-center gap-4 items-center">
-					<div className="text-stone-50 text-3xl text-center font-medium font-['Inter'] tracking-wider">
-						Get Involved
-					</div>
-					<div className="text-slate-50 text-lg text-center font-['Nunito'] tracking-wide">
-						Volunteer, Participate and Donate
-					</div>
-				</div>
-			</div>
+		<div className="w-full flex flex-col md:flex-row items-stretch justify-between">
+			{/* Mission */}
+			<Link
+				href="/about"
+				className="group w-full md:flex-1 h-full px-10 md:px-16  py-8 bg-secondary transition-all duration-300 hover:shadow-xl hover:scale-[1.02] text-white text-center flex flex-col items-center justify-center"
+			>
+				<h3
+					className={`text-xl md:text-2xl font-medium ${inter.className} tracking-wide group-hover:underline underline-offset-4`}
+				>
+					Our Mission
+				</h3>
+				<p
+					className={`mt-2 text-sm md:text-base  font-light ${inter.className} tracking-wider`}
+				>
+					Our Goal, Vision and Commitment
+				</p>
+			</Link>
+
+			{/* Events */}
+			<Link
+				href="/events"
+				className="group w-full md:flex-1 h-full px-10 md:px-16 py-8 bg-primary transition-all duration-300 hover:shadow-xl hover:scale-[1.02] text-white text-center flex flex-col items-center justify-center"
+			>
+				<h3
+					className={`text-xl md:text-2xl font-medium ${inter.className} tracking-wide group-hover:underline underline-offset-4`}
+				>
+					Our Events
+				</h3>
+				<p
+					className={`mt-2 text-sm md:text-base  font-light ${inter.className} tracking-wider`}
+				>
+					Register and Help Make Change
+				</p>
+			</Link>
+
+			{/* Get Involved */}
+			<Link
+				href="/join-us"
+				className="group w-full md:flex-1 h-full px-10 md:px-16  py-8 bg-accent-two  transition-all duration-300 hover:shadow-xl hover:scale-[1.02] text-white text-center flex flex-col items-center justify-center"
+			>
+				<h3
+					className={`text-xl md:text-2xl font-medium ${inter.className} tracking-wide group-hover:underline underline-offset-4`}
+				>
+					Get Involved
+				</h3>
+				<p
+					className={`mt-2 text-sm md:text-base  font-light ${inter.className} tracking-wider`}
+				>
+					Volunteer, Participate and Donate
+				</p>
+			</Link>
 		</div>
 	);
 };

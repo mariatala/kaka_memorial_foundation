@@ -15,6 +15,15 @@ module.exports = {
 				gold: '#FFD700',
 				midnight: '#121063',
 			},
+			animation: {
+				'bounce-slow': 'bounce 10s infinite',
+			},
+			perspective: {
+				'1000px': '1000px',
+			},
+			transformOrigin: {
+				center: 'center',
+			},
 		}, // add custom styles here
 	},
 	plugins: [require('tailwind-scrollbar')],

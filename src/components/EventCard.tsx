@@ -1,6 +1,12 @@
 'use client';
 
 import Image from 'next/image';
+import { Inter, Gowun_Dodum } from 'next/font/google';
+const inter = Inter({
+	weight: ['200', '300', '400', '500', '600', '700', '800'],
+	subsets: ['latin'],
+});
+const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 
 type XSpaceCardProps = {
 	imageSrc: string;
@@ -28,10 +34,14 @@ const EventCard = ({
 
 			{/* Sliding Overlay Content */}
 			<div className="absolute top-0 bottom-0 right-0 p-4 sm:p-5 bg-accent-three-light/90 w-[90%] flex flex-col justify-start items-start gap-4 border-t-4 border-b-4 border-primary transform transition-transform duration-500 ease-in-out group-hover:translate-x-full group-active:translate-x-full group-focus-within:translate-x-full">
-				<div className="text-primary text-base sm:text-lg md:text-xl font-semibold tracking-wide">
+				<div
+					className={`text-primary text-base sm:text-lg  font-semibold tracking-wide ${inter.className}`}
+				>
 					{title}
 				</div>
-				<div className="text-primary text-sm sm:text-base font-normal leading-7 tracking-wide">
+				<div
+					className={`text-primary text-sm  leading-7 tracking-wide ${inter.className}`}
+				>
 					{description}
 				</div>
 			</div>
