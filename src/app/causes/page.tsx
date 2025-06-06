@@ -29,7 +29,7 @@ const CausesPage = () => {
 		/>,
 		<Users
 			key="users"
-			className="w-12 h-12 md:w-20 md:h-20 text-secondary"
+			className="w-12 s: h-12  md:w-20 md:h-20 text-secondary"
 			strokeWidth={1}
 		/>,
 		<Megaphone

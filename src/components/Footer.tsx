@@ -40,23 +40,22 @@ const Footer = () => {
 								Get in Touch:
 							</p>
 							<div className="flex flex-col gap-4 text-sm font-light">
-								<p className="flex items-center gap-4">
-									<Mail /> Email:{' '}
+								<p className="flex items-center gap-2">
+									<Mail />{' '}
 									<a href="mailto:kakafoundation@gmail.com">
 										kakafoundation@gmail.com
 									</a>
 								</p>
 								<p className="flex items-center gap-4">
 									<PhoneCall />
-									Phone: <a href="tel:+1234567890">+1 (234) 567-890</a>
+									<a href="tel:+1234567890">+1 (234) 567-890</a>
 								</p>
 								<p className="flex items-center gap-4">
 									<MapPin />
-									Address: 123 Charity Lane, City, State, Zip Code
+									123 Charity Lane, City, State, Zip Code
 								</p>
 								<p className="flex items-center gap-4">
-									<MessageCircleHeart />
-									WhatsApp:{' '}
+									<MessageCircleHeart />{' '}
 									<a href="https://wa.me/1234567890">+1 (234) 567-890</a>
 								</p>
 								<p className="flex items-center gap-4">

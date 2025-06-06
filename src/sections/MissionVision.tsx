@@ -30,7 +30,7 @@ const MissionVisionSection: React.FC<MissionVisionSectionProps> = ({
 				{/* Cards */}
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-16">
 					{/* Mission */}
-					<div className="bg-white shadow-lg rounded-xl p-10 border-l-8 border-secondary hover:scale-[1.01] transition-all duration-300">
+					<div className="bg-white shadow-lg rounded-xl  px-4 md:px-10 py-10 border-l-8 border-secondary hover:scale-[1.01] transition-all duration-300">
 						<div className="flex items-center gap-4 mb-6">
 							<Target className="text-secondary w-8 h-8" />
 							<h3
@@ -50,7 +50,7 @@ const MissionVisionSection: React.FC<MissionVisionSectionProps> = ({
 					</div>
 
 					{/* Vision */}
-					<div className="bg-white shadow-lg rounded-xl p-10 border-l-8 border-brightTwo hover:scale-[1.01] transition-all duration-300">
+					<div className="bg-white shadow-lg rounded-xl px-4 md:px-10 py-10 border-l-8 border-brightTwo hover:scale-[1.01] transition-all duration-300">
 						<div className="flex items-center gap-4 mb-6">
 							<Eye className="text-brightTwo w-8 h-8" />
 							<h3

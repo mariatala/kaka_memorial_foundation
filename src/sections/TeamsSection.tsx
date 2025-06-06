@@ -3,6 +3,9 @@
 import React from 'react';
 import Image from 'next/image';
 import TeamMemberCard from '@/components/TeamMemberCard';
+import { Gowun_Dodum } from 'next/font/google';
+
+const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 
 interface TeamSectionProps {
 	gowunFontClass: string;
@@ -16,18 +19,19 @@ const TeamSection: React.FC<TeamSectionProps> = ({
 	titleFontClass = '',
 }) => {
 	return (
-		<section className="our-team w-full bg-gradient-to-b from-accent-three-light to-white py-24">
+		<section className="our-team w-full bg-gradient-to-b from-accent-three-light to-white  py-12 md:py-24">
 			<div className="w-[90%] max-w-7xl mx-auto flex flex-col justify-center items-center gap-20 overflow-hidden">
 				{/* Heading */}
-				<div className="flex flex-col justify-start items-center gap-3 text-center">
-					<h2
-						className={`text-primary text-4xl md:text-5xl font-bold uppercase tracking-[0.2em] ${titleFontClass}`}
+				<div className="w-full md:w-1/3 space-y-2">
+					<h3
+						className={`text-3xl md:text-5xl  tracking-widest uppercase text-primary ${gowun.className}`}
 					>
 						Our Team
-					</h2>
-					<p className="text-secondary text-xl tracking-wide font-semibold">
-						You Can Be A Part Of Us
-					</p>
+					</h3>
+					<div className="w-16 h-1 bg-secondary rounded-full" />
+					<h4 className="text-xl text-secondary font-semibold tracking-wide mt-2">
+						Meet the People Behind Kaka Foundation
+					</h4>
 				</div>
 
 				{/* Founder Block */}

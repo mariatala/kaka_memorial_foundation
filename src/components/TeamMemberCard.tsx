@@ -2,7 +2,6 @@
 import React from 'react';
 import Image from 'next/image';
 
-
 interface TeamMemberCardProps {
 	imageSrc: string;
 	altText: string;
@@ -23,7 +22,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
 	niconneFontClass = '',
 }) => {
 	return (
-		<div className="w-full mx-auto py-8 px-12 gap-8 bg-slate-50 border-t-4 border-b-4 border-secondary inline-flex justify-between items-start flex-col md:flex-row">
+		<div className="w-full mx-auto py-8 px-4 md:px-12 gap-8 bg-slate-50 border-t-4 border-b-4 border-secondary inline-flex justify-between items-start flex-col md:flex-row">
 			<Image
 				className="w-full md:w-2/5"
 				width={400}
