@@ -20,7 +20,7 @@ const EventsPage = () => {
 					scrolledBgColor="bg-primary"
 					scrolledTextColor="text-light"
 				/>
-				<div className="w-full flex  md:flex-row mt-24 justify-end items-center">
+				<div className="w-full flex  md:flex-row mt-32 md:mt-24 justify-end items-center">
 					<Image
 						src="/joinUs.jpg"
 						alt="Kaka Memorial Foundation Logo"
@@ -53,7 +53,7 @@ const EventsPage = () => {
 								stakeholders in order to achieve real impact in sustainable
 								dimensions of growth.
 							</p>
-							<div className="flex flex-row items-center gap-4 mt-6">
+							<div className=" grid grid-cols-2 items-center gap-4 mt-6">
 								<Link
 									href="/volunteer"
 									className={`bg-primary text-light flex items-center gap-2 px-2 sm:px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-secondary hover:text-primary transition-all duration-300`}

@@ -16,7 +16,7 @@ const AboutPage = () => {
 			<section className="w-full inline-flex items-end  h-80 justify-start bg-gradient-to-b from-primary to-primary-dark py-16 ">
 				<Header />
 
-				<div className="w-full px-32 flex flex-col justify-center items-start gap-2">
+				<div className="w-full  px-4 sm:px-16 md:px-32 flex flex-col justify-center items-start gap-2">
 					<h3
 						className={`text-3xl md:text-5xl  tracking-widest uppercase text-light ${gowun.className}`}
 					>

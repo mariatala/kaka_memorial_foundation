@@ -15,7 +15,7 @@ const EventsCard = ({
 }) => {
 	return (
 		<div
-			className={`${background} w-full shadow-sm p-8 md:p-4 lg:p-16 mb-32 flex flex-col gap-8 lg:flex-row items-center`}
+			className={`${background} w-full shadow-sm px-4 py-8 lg:p-16 mb-32 flex flex-col gap-8 lg:flex-row items-center`}
 		>
 			{/* Image on the left */}
 			<img
