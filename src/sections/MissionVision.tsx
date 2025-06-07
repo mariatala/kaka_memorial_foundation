@@ -13,16 +13,17 @@ const MissionVisionSection: React.FC<MissionVisionSectionProps> = ({
 	bodyFontClass = '',
 }) => {
 	return (
-		<section className="w-full bg-light py-20 px-6 md:px-16 border-t-4 border-b-4 border-primary">
+		<section className="w-full bg-light py-20 px-6 md:px-16">
 			<div className="w-full max-w-7xl mx-auto flex flex-col gap-16">
 				{/* Section Title */}
-				<div className="text-center flex flex-col gap-4">
+				<div className="text-center flex flex-col items-center gap-2">
 					<h2
 						className={`text-3xl md:text-5xl text-primary font-bold uppercase tracking-widest ${titleFontClass}`}
 					>
 						Our Mission & Vision
 					</h2>
-					<p className="text-secondary text-xl tracking-wide font-semibold">
+					<div className="w-16 h-1 bg-secondary rounded-full" />
+					<p className="text-secondary text-xl tracking-wide font-semibold mt-2">
 						Driving impact through purpose and clarity
 					</p>
 				</div>

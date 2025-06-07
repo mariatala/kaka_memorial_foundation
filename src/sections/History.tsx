@@ -7,12 +7,12 @@ const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 
 const HistorySection = () => {
 	return (
-		<section className="relative w-full py-12 md:py-24 px-4 md:px-24">
-			<div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start  gap-8 md:gap-12">
+		<section className="relative w-full py-12 md:py-24 px-4 md:px-12 lg:px-24">
+			<div className=" mx-auto flex flex-col md:flex-row items-start gap-8 lg:gap-12">
 				{/* Title Block */}
 				<div className="w-full md:w-1/3 space-y-2">
 					<h3
-						className={`text-3xl md:text-5xl  tracking-widest uppercase text-primary ${gowun.className}`}
+						className={`text-3xl md:text-4xl lg:text-5xl  tracking-widest uppercase text-primary ${gowun.className}`}
 					>
 						Our History
 					</h3>
@@ -24,7 +24,7 @@ const HistorySection = () => {
 
 				{/* Content Block */}
 				<div
-					className={`text-primary md:text-lg text-base font-medium  leading-10 tracking-wide ${gowun.className}`}
+					className={`text-primary w-full md:w-2/3 md:text-lg text-base font-medium  leading-10 tracking-wide ${gowun.className}`}
 				>
 					<p>
 						Kaka Memorial Foundation is a non-profit organization founded in

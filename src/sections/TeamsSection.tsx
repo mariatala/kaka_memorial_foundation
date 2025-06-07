@@ -21,14 +21,14 @@ const TeamSection: React.FC<TeamSectionProps> = ({
 		<section className="our-team w-full bg-gradient-to-b from-accent-three-light to-white  py-12 md:py-24">
 			<div className="w-[90%] max-w-7xl mx-auto flex flex-col justify-center items-center gap-20 overflow-hidden">
 				{/* Heading */}
-				<div className="w-full md:w-1/3 space-y-2">
+				<div className="flex items-center flex-col md:items-center-safe w-full gap-2">
 					<h3
-						className={`text-3xl md:text-5xl  tracking-widest uppercase text-primary ${gowun.className}`}
+						className={`text-3xl md:text-5xl  text-center tracking-widest uppercase text-primary ${gowun.className}`}
 					>
 						Our Team
 					</h3>
 					<div className="w-16 h-1 bg-secondary rounded-full" />
-					<h4 className="text-xl text-secondary font-semibold tracking-wide mt-2">
+					<h4 className="text-xl text-secondary font-semibold tracking-wide mt-2 text-center">
 						Meet the People Behind Kaka Foundation
 					</h4>
 				</div>
@@ -62,7 +62,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
 				</div>
 
 				{/* Other Team Members */}
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
 					<TeamMemberCard
 						imageSrc="/team/Inuwa_Suleiman_Gani.jpeg"
 						altText="Team member - Secretary"

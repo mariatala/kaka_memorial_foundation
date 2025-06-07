@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
-import EventCard from './EventCard';
+import EventCard from './RecentEventCard';
 
 const EventsCarousel: React.FC = () => {
 	const carouselRef = useRef<HTMLDivElement | null>(null);

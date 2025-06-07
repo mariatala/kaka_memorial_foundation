@@ -66,7 +66,7 @@ const HeroSection = () => {
 					>
 						Connecting Communities
 					</h3>
-					<div className="w-16 h-1 bg-light rounded-full" />
+
 					<h4
 						className={` text-lg sm:text-xl text-light  tracking-wide mt-2  ${inter.className}`}
 					>

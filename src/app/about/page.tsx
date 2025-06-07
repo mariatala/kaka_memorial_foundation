@@ -15,13 +15,17 @@ const AboutPage = () => {
 			{/* Header Banner Section */}
 			<section className="w-full inline-flex items-end  h-80 justify-start bg-gradient-to-b from-primary to-primary-dark py-16 ">
 				<Header />
-				<div className="text-left w-full md:w-2/3 bg-secondary py-8 px-10">
-					<h2 className="text-3xl md:text-4xl font-semibold text-light tracking-wide">
-						ABOUT US
-					</h2>
-					<p className="text-lg md:text-xl text-bright font-medium">
+
+				<div className="w-full px-32 flex flex-col justify-center items-start gap-2">
+					<h3
+						className={`text-3xl md:text-5xl  tracking-widest uppercase text-light ${gowun.className}`}
+					>
+						About Us
+					</h3>
+
+					<h4 className="text-xl text-secondary font-semibold tracking-wide mt-2">
 						Our Motto: “Impacting Humanity With Kindness”
-					</p>
+					</h4>
 				</div>
 			</section>
 

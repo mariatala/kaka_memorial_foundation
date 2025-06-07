@@ -45,8 +45,14 @@ const CausesPage = () => {
 	];
 	return (
 		<div className="bg-white text-primary font-['Inter']">
-			<section className="w-full inline-flex  h-120 justify-start items-center">
-				<Header />
+			<section className="w-full inline-flex  h-120 justify-start items-center t">
+				<Header
+					bgColor="bg-white"
+					textColor="text-primary"
+					scrolledBgColor="bg-primary"
+					scrolledTextColor="text-light"
+				/>
+
 				<div className="w-full flex flex-col  md:flex-row items-center">
 					<Image
 						src="/map-1.png"
@@ -227,22 +233,17 @@ const CausesPage = () => {
 					<div className="w-full max-w-6xl mx-auto px-6 md:px-12 mb-16 py-12 md:py-24 space-y-16">
 						{[
 							{
-								title: '1. Join Us in Making a Difference',
-								description:
-									'Join us in our mission to uplift communities and create a better future for all. Whether through volunteering, donating, or spreading the word, your support makes a difference.',
-							},
-							{
-								title: '2. Community Engagements & Discussions',
+								title: '1. Community Engagements & Discussions',
 								description:
 									'We organize public forums such as Twitter/X Spaces, webinars, town halls, and community dialogues — both online and offline. These platforms encourage open dialogue between the foundation, citizens, and stakeholders, fostering transparency, collective learning, and grassroots-driven solutions.',
 							},
 							{
-								title: '3. Issue-Based Campaigns',
+								title: '2. Issue-Based Campaigns',
 								description:
 									'Our campaigns shine a spotlight on specific challenges affecting vulnerable populations. Whether it’s advocating for improved school infrastructure, better sanitation, or access to safe drinking water, these campaigns mobilize communities, volunteers, and partners to take action and drive change.',
 							},
 							{
-								title: '4. Stakeholder Meetings & Consultations',
+								title: '3. Stakeholder Meetings & Consultations',
 								description:
 									'We regularly engage with government representatives, NGOs, development partners, and community leaders to align efforts, share insights, and co-develop solutions. These meetings help shape inclusive programs and ensure that interventions are grounded in the real needs of the people.',
 							},
@@ -261,7 +262,7 @@ const CausesPage = () => {
 										{item.title}
 									</h3>
 									<p
-										className={`leading-loose max-w-3xl text-sm md:text-base text-justify text-primary ${inter.className}`}
+										className={`leading-loose max-w-3xl text-sm md:text-base text-left text-primary ${inter.className}`}
 									>
 										{item.description}
 									</p>
