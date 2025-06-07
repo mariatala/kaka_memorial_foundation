@@ -13,39 +13,44 @@ const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 const EventsPage = () => {
 	return (
 		<div className="w-full h-full bg-accent-three-light flex flex-col">
-			<section className="w-full inline-flex h-120 justify-start items-center ">
+			<section className="w-full flex min-h-[32rem] md:min-h-[30rem] justify-start items-center py-8 md:py-0">
 				<Header
 					bgColor="bg-white"
 					textColor="text-primary"
 					scrolledBgColor="bg-primary"
 					scrolledTextColor="text-light"
 				/>
-				<div className="w-full flex flex-col-reverse h-fit  md:flex-row mt-32 md:mt-24 justify-end items-center">
+				<div className="w-full flex flex-col-reverse  md:flex-row mt-16 justify-end items-center">
 					<Image
 						src="/joinUs.jpg"
 						alt="Kaka Memorial Foundation Logo"
 						width={400}
 						height={400}
-						className="md:border-l-12 w-full md:w-1/5 border-secondary h-auto transition-all duration-300"
+						className="md:border-l-12 w-2/3 md:w-1/5 border-secondary h-auto transition-all duration-300"
 					/>
-					<div className="w-full  md:w-2/3 h-fit text-left bg-accent-three-light py-8 px-10">
+					<div className="w-full  md:w-2/3 text-left bg-accent-three-light py-8 px-10">
 						<div className="w-full lg:w-5/6 h-full flex flex-col justify-center items-start">
 							<div className="w-full  flex flex-col justify-center items-start space-y-2">
 								<h2
-									className={`text-3xl md:text-5xl uppercase text-primary ${gowun.className}`}
+									className={`text-3xl md:text-5xl uppercase text-primary ${
+										gowun.className ?? ''
+									}`}
 								>
-									join us
+									ACTIVITIES
 								</h2>
+								{/* Alternatives: PROGRAMS, INITIATIVES, HAPPENINGS, ENGAGEMENTS, OCCASIONS */}
 
 								<p
 									className={` text-lg md:text-xl mt-2 text-secondary font-semibold tracking-wide ${inter.className}`}
 								>
-									You Can Be A Part Of Us
+									Make a Difference With Us
 								</p>
 							</div>
 
 							<p
-								className={` text-primary ${gowun.className}  leading-8 md:text-lg mt-4 lg:mt-8`}
+								className={` text-primary ${
+									gowun.className ?? ''
+								} leading-8 md:text-lg mt-4 lg:mt-8`}
 							>
 								Kaka Memorial Foundation Consistently brings to life the ideals
 								of humanity. Through advocacy and interventions, we envision
@@ -59,21 +64,21 @@ const EventsPage = () => {
 									className={`bg-primary text-light flex items-center gap-2 px-2 sm:px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-secondary hover:text-primary transition-all duration-300`}
 								>
 									Join Us
-									<Heart className="hidden sm:block h-5 w-5 ml-1 text-accent-three-light" />
+									<Heart className=" h-5 w-5 ml-1 text-accent-three-light" />
 								</Link>
 								<Link
 									href="/contact"
 									className={`bg-secondary text-light flex items-center gap-2 px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-primary hover:text-secondary transition-all duration-300`}
 								>
 									Donate
-									<Heart className=" hidden sm:block h-5 w-5 ml-1 text-accent-three-light" />
+									<Heart className=" h-5 w-5 ml-1 text-accent-three-light" />
 								</Link>
 								<Link
 									href="/volunteer"
 									className={`bg-accent-three-light text-primary border border-primary flex items-center gap-2 px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-primary hover:text-light transition-all duration-300`}
 								>
 									Volunteer
-									<Heart className=" hidden sm:block h-5 w-5 ml-1 text-primary" />
+									<Heart className=" h-5 w-5 ml-1 text-primary" />
 								</Link>
 							</div>
 						</div>
