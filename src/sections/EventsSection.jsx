@@ -42,7 +42,7 @@ const events = [
 
 const EventsSection = () => {
 	return (
-		<section className=" w-full events-section py-16 md:py-24  px-2 sm:px-8 md:px-16 lg:px-32 bg-light">
+		<section className=" w-full events-section py-12 sm:py-16 md:py-24  px-2 sm:px-8 md:px-16 lg:px-32 bg-light">
 			<div className="w-full  flex flex-col justify-center items-center space-y-2 mb-16">
 				<h2
 					className={`text-3xl md:text-5xl uppercase text-primary ${gowun.className}`}
