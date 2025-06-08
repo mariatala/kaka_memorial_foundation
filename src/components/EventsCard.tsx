@@ -1,12 +1,10 @@
-import { Gowun_Dodum, Inter } from 'next/font/google';
+import { Gowun_Dodum } from 'next/font/google';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
-const inter = Inter({
-	weight: ['300', '400', '500', '700'],
-	subsets: ['latin'],
-});
+
 type EventsCardProps = {
 	event: {
 		title: string;
@@ -31,7 +29,8 @@ const EventsCard: React.FC<EventsCardProps> = ({
 			className={`${background} w-full shadow-sm px-4 py-8 lg:p-16 mb-32 flex flex-col gap-8 lg:flex-row items-center`}
 		>
 			{/* Image on the left */}
-			<img
+			<Image
+				width={100}
 				src={imageUrl || 'https://via.placeholder.com/100'}
 				alt={event.title}
 				className=" w-full md:1/2 lg:w-1/3 object-cover rounded-lg max-h-72"
