@@ -42,8 +42,18 @@ const events = [
 
 const EventsSection = () => {
 	return (
-		<section className=" w-full events-section py-12 sm:py-16 md:py-24  px-2 sm:px-8 md:px-16 lg:px-32 bg-light">
-			<div className="w-full  flex flex-col justify-center items-center space-y-2 mb-16">
+		<section className=" w-full events-section px-2 pb-12 sm:px-8 md:px-16 lg:px-32">
+			<div className="w-full inline-flex justify-center md:my-0 ">
+				<p
+					className={`${gowun.className} text-lg leading-8 tracking-wide text-justify md:text-center w-full px-8 lg:w-5/6 md:px-12 lg:px-16 my-8 text-primary`}
+				>
+					Kaka Memorial Foundation Consistently brings to life the ideals of
+					humanity. Through advocacy and interventions, we envision reaching out
+					to communities so as to deliberately connect stakeholders in order to
+					achieve real impact in sustainable dimensions of growth.
+				</p>
+			</div>
+			<div className="w-full  flex flex-col justify-center items-center space-y-2 my-16">
 				<h2
 					className={`text-3xl md:text-5xl uppercase text-primary ${gowun.className}`}
 				>

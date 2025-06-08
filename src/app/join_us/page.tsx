@@ -1,20 +1,94 @@
-const JoinUsPage = () => {
-  return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold mb-4">Join Us</h1>
-      <p className="text-lg mb-8">We are excited to have you here! Please fill out the form below to join our community.</p>
-      <form className="w-full max-w-md">
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-2" htmlFor="name">Name</label>
-          <input type="text" id="name" className="w-full px-3 py-2 border rounded" required />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-2" htmlFor="email">Email</label>
-          <input type="email" id="email" className="w-full px-3 py-2 border rounded" required />
-        </div>
-        <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Submit</button>
-      </form>
-    </div>
-  );
-}
-export default JoinUsPage;
+import React from 'react';
+import Image from 'next/image';
+import Header from '@/components/Header';
+import RegistrationCard from '@/components/RegistrationCard';
+import { Heart } from 'lucide-react';
+import { Inter, Gowun_Dodum } from 'next/font/google';
+import Link from 'next/link';
+import DonateSection from '@/sections/DonateSection';
+import JoinUsSection from '@/sections/JoinUsCta';
+const inter = Inter({
+	weight: ['200', '300', '400', '500', '600', '700', '800'],
+	subsets: ['latin'],
+});
+const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
+const EventsPage = () => {
+	return (
+		<div className="w-full h-full flex flex-col">
+			<section className="w-full flex min-h-[32rem] md:min-h-[30rem] justify-start items-center py-8 md:py-0">
+				<Header
+					bgColor="bg-white"
+					textColor="text-primary"
+					scrolledBgColor="bg-primary"
+					scrolledTextColor="text-light"
+				/>
+
+				<div className="w-full flex flex-col-reverse  md:flex-row mt-16 justify-end items-center">
+					<div className="w-full flex flex-col justify-center items-start">
+						<div className="w-full flex flex-col-reverse md:flex-row items-center">
+							<Image
+								src="/joinUs.jpg"
+								alt="Kaka Memorial Foundation Logo"
+								width={500}
+								height={500}
+								className="md:border-l-12 w-5/6 md:w-1/4 border-secondary h-auto transition-all duration-300"
+							/>
+							<div className="w-full h-fit text-left bg-accent-three py-8 px-10">
+								<h2
+									className={`text-3xl md:text-5xl uppercase text-primary ${gowun.className}`}
+								>
+									Get Involved
+								</h2>
+								<p
+									className={` text-lg md:text-xl my-4 text-light font-semibold tracking-wide ${inter.className}`}
+								>
+									Make a Difference With Us
+								</p>
+								<div className="grid grid-cols-2 md:grid-cols-3 items-center gap-4 mt-6 max-w-fit">
+									<Link
+										href="/join_us"
+										className={`bg-primary text-light flex items-center gap-2 px-2 sm:px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-secondary hover:text-primary transition-all duration-300`}
+									>
+										Join Us
+										<Heart className=" h-5 w-5 ml-1 text-accent-three-light" />
+									</Link>
+									<Link
+										href="/join_us"
+										className={`bg-secondary text-light flex items-center gap-2 px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-primary hover:text-secondary transition-all duration-300`}
+									>
+										Donate
+										<Heart className=" h-5 w-5 ml-1 text-accent-three-light" />
+									</Link>
+									<Link
+										href="/join_us"
+										className={`bg-accent-three-light text-primary border border-primary flex items-center gap-2 px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-primary hover:text-light transition-all duration-300`}
+									>
+										Volunteer
+										<Heart className=" h-5 w-5 ml-1 text-primary" />
+									</Link>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/*Partner Card Section*/}
+			<section className=" w-full flex flex-col justify-center items-center gap-32 py-12 sm:py-16 md:py-24  px-2 sm:px-8 md:px-16 lg:px-32 bg-light ">
+				<RegistrationCard formType="partner" />
+				<RegistrationCard formType="volunteer" />
+				<DonateSection />
+			</section>
+
+			<JoinUsSection
+				title="Join Us in Making a Difference"
+				description="Join us in our mission to uplift communities and create a better future for all. Whether through volunteering, donating, or spreading the word, your support makes a difference."
+				bgColor="bg-white"
+				animateIcon={true}
+			/>
+
+			{/*Footer Section*/}
+		</div>
+	);
+};
+export default EventsPage;
