@@ -7,7 +7,20 @@ const inter = Inter({
 	weight: ['300', '400', '500', '700'],
 	subsets: ['latin'],
 });
-const EventsCard = ({
+type EventsCardProps = {
+	event: {
+		title: string;
+		subtitle: string;
+		description: string;
+		date: string | number | Date;
+		location: string;
+	};
+	imageUrl?: string;
+	background?: string;
+	joinLink?: string;
+};
+
+const EventsCard: React.FC<EventsCardProps> = ({
 	event,
 	imageUrl,
 	background = 'bg-white',
