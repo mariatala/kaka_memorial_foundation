@@ -12,6 +12,11 @@
 	--color-accent-three-light: #edf3f7;
 }
 
+
+html {
+	scroll-behavior: smooth;
+}
+
 /* Hide scrollbar while allowing scroll */
 .no-scrollbar::-webkit-scrollbar {
 	display: none;

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Header from '../components/Header'; // Make sure the path is correct
+import Header from '@/components/Header'; // Make sure the path is correct
 import { FaFacebook } from 'react-icons/fa';
 import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
@@ -20,10 +20,7 @@ const HeroSection = () => {
 			{/* Gradient Overlay */}
 			<div className="absolute inset-0 bg-gradient-to-b from-primary-dark/40 to-primary-dark/100 z-0" />
 
-			{/* Fixed Header on top */}
-			<div className="fixed top-0 left-0 w-full z-50">
-				<Header />
-			</div>
+			
 
 			{/* Hero Content */}
 			<div className="relative z-10  h-full flex flex-col-reverse gap-8 md:flex-row items-center mt-16 justify-center  md:justify-between text-justify py-32">

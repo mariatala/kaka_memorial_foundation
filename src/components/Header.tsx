@@ -1,9 +1,12 @@
+// components/Header.tsx
 'use client';
 
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { HeartHandshake, Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
+import { useSession, signOut } from 'next-auth/react';
+import { HeartHandshake, Menu, X } from 'lucide-react';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({
@@ -11,43 +14,81 @@ const inter = Inter({
 	subsets: ['latin'],
 });
 
-interface HeaderProps {
-	bgColor?: string;
-	textColor?: string;
-	scrolledBgColor?: string;
-	scrolledTextColor?: string;
+interface StyleVariant {
+	bgColor: string;
+	textColor: string;
+	scrolledBgColor: string;
+	scrolledTextColor: string;
 }
 
-const Header: React.FC<HeaderProps> = ({
-	bgColor = 'bg-transparent',
-	textColor = 'text-light',
-	scrolledBgColor = 'bg-primary',
-	scrolledTextColor = 'text-light',
-}) => {
-	const [isOpen, setIsOpen] = React.useState(false);
-	const [scrolled, setScrolled] = React.useState(false);
+const variants: Record<'default' | 'alt', StyleVariant> = {
+	default: {
+		bgColor: 'bg-transparent',
+		textColor: 'text-light',
+		scrolledBgColor: 'bg-primary',
+		scrolledTextColor: 'text-light',
+	},
+	alt: {
+		bgColor: 'bg-light',
+		textColor: 'text-primary-dark',
+		scrolledBgColor: 'bg-primary',
+		scrolledTextColor: 'text-light',
+	},
+};
 
-	const toggleMenu = () => setIsOpen(!isOpen);
+export default function Header() {
+	const { data: session } = useSession();
+	const router = useRouter();
+	const pathname = usePathname();
+	const [isOpen, setIsOpen] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
 
-	React.useEffect(() => {
-		const handleScroll = () => {
-			setScrolled(window.scrollY > 60);
-		};
+	// define which top-level paths use the "alt" variant
+	const altPaths = ['causes', 'events', 'join_us', 'contact','login'] as const;
+	const segment = pathname.split('/')[1]; // the first path segment
+	const variantKey = altPaths.includes(segment as (typeof altPaths)[number])
+		? 'alt'
+		: 'default';
+	const { bgColor, textColor, scrolledBgColor, scrolledTextColor } =
+		variants[variantKey];
 
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
+	useEffect(() => {
+		const onScroll = () => setScrolled(window.scrollY > 60);
+		window.addEventListener('scroll', onScroll);
+		return () => window.removeEventListener('scroll', onScroll);
 	}, []);
 
 	const navTextColor = scrolled ? scrolledTextColor : textColor;
+	const toggleMenu = () => setIsOpen((o) => !o);
+
+	const handleSignOut = async () => {
+		await signOut({ redirect: false });
+		router.push('/');
+	};
+
+	const links = [
+		{ href: '/', label: 'Home' },
+		{ href: '/about', label: 'About' },
+		{ href: '/causes', label: 'Causes' },
+		{ href: '/events', label: 'Events' },
+		{ href: '/join_us', label: 'Join Us' },
+		{ href: '/contact', label: 'Contact' },
+	];
+
+	if (session) {
+		links.push({ href: '/registrations', label: 'Admin' });
+	}
 
 	return (
 		<header
-			className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 px-2 md:px-8 lg:px-16 ${
-				scrolled ? `${scrolledBgColor} py-2 shadow-md` : `${bgColor} py-4`
-			}`}
+			className={`
+        w-full fixed top-0 left-0 z-50
+        transition-all duration-300
+        px-2 md:px-8 lg:px-16
+        ${scrolled ? `${scrolledBgColor} py-2 shadow-md` : `${bgColor} py-4`}
+      `}
 		>
 			<div className="flex justify-between items-center w-full transition-all duration-300">
-				{/* Logo */}
 				<Link href="/" className="flex items-center">
 					<Image
 						src="/Logo.png"
@@ -60,53 +101,43 @@ const Header: React.FC<HeaderProps> = ({
 					/>
 				</Link>
 
-				{/* Desktop Nav */}
 				<nav
-					className={`hidden md:flex items-center gap-6 lg:gap-8 tracking-widest uppercase ${inter.className} ${navTextColor}`}
+					className={`hidden text-sm font-semibold md:flex items-center gap-10 tracking-widest uppercase ${inter.className} ${navTextColor}`}
 				>
-					{[
-						{ href: '/', label: 'Home' },
-						{ href: '/about', label: 'About' },
-						{ href: '/causes', label: 'Causes' },
-						{ href: '/events', label: 'Events' },
-						{ href: '/join_us', label: 'Join Us' },
-						{ href: '/contact', label: 'Contact' },
-					].map(({ href, label }) => (
+					{links.map(({ href, label }) => (
 						<Link key={href} href={href} className="hover:text-secondary">
 							{label}
 						</Link>
 					))}
+					{session && (
+						<button
+							onClick={handleSignOut}
+							className="ml-4 text-base px-4 py-2 rounded border hover:bg-secondary hover:text-light transition"
+						>
+							Sign Out
+						</button>
+					)}
 				</nav>
 
-				{/* Donate Button */}
 				<Link
-					href="/join_us"
-					className="hidden md:flex items-center gap-2 text-lg text-secondary px-4 py-1 rounded-sm border-2 border-secondary hover:bg-secondary hover:text-light transition-colors duration-300"
+					href="/join_us#donate"
+					className="hidden md:flex items-center gap-1 text-lg text-secondary md:px-1 lg:px-4 py-1 rounded-sm border-2 border-secondary hover:bg-secondary hover:text-light transition-colors duration-300"
 				>
-					Donate Now <HeartHandshake size={20} />
+					Donate <HeartHandshake size={20} />
 				</Link>
 
-				{/* Mobile Toggle */}
 				<button onClick={toggleMenu} className={`md:hidden ${navTextColor}`}>
 					{isOpen ? <X size={28} /> : <Menu size={28} />}
 				</button>
 			</div>
 
-			{/* Mobile Nav */}
 			{isOpen && (
 				<div
-					className={`md:hidden mt-4 flex flex-col gap-8 ${scrolledBgColor} px-4 py-4 rounded ${scrolledTextColor} capitalize transition-all duration-300`}
+					className={`md:hidden mt-4 flex flex-col gap-4 ${scrolledBgColor} px-4 py-4 rounded ${scrolledTextColor}`}
 				>
-					{[
-						{ href: '/', label: 'Home' },
-						{ href: '/about', label: 'About' },
-						{ href: '/causes', label: 'Causes' },
-						{ href: '/events', label: 'Events' },
-						{ href: '/join_us', label: 'Join Us' },
-						{ href: '/contact', label: 'Contact' },
-					].map(({ href, label }) => (
+					{links.map(({ href, label }) => (
 						<Link
-							key={label}
+							key={href}
 							href={href}
 							onClick={toggleMenu}
 							className="hover:text-secondary"
@@ -114,17 +145,26 @@ const Header: React.FC<HeaderProps> = ({
 							{label}
 						</Link>
 					))}
+					{session && (
+						<button
+							onClick={() => {
+								toggleMenu();
+								handleSignOut();
+							}}
+							className="w-fit px-3 py-1 rounded-sm hover:bg-secondary hover:text-light text-lg transition"
+						>
+							Sign Out
+						</button>
+					)}
 					<Link
 						href="/join_us"
 						onClick={toggleMenu}
-						className="w-fit flex items-center gap-2 bg-secondary px-3 py-1 rounded-sm hover:bg-primary-dark hover:text-light text-lg text-light border-secondary transition-colors duration-300"
+						className="w-fit flex items-center gap-2 bg-secondary px-3 py-1 rounded-sm hover:bg-primary-dark hover:text-light text-lg transition"
 					>
-						Donate Now <HeartHandshake size={20} />
+						Donate <HeartHandshake size={20} />
 					</Link>
 				</div>
 			)}
 		</header>
 	);
-};
-
-export default Header;
+}

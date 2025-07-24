@@ -44,7 +44,7 @@ const MissionVisionSection: React.FC<MissionVisionSectionProps> = ({
 							className={`text-slate-700 leading-8 tracking-wide ${bodyFontClass}`}
 						>
 							To create sustainable development opportunities by empowering
-							underprivileged communities — focusing on education, access to
+							underprivileged communities focusing on education, access to
 							basic needs, and promoting dignity, resilience, and innovation
 							through strategic grassroots engagement.
 						</p>
@@ -65,7 +65,7 @@ const MissionVisionSection: React.FC<MissionVisionSectionProps> = ({
 						>
 							To be a beacon of hope and transformation for marginalized
 							populations, fostering a world where every individual has the
-							opportunity to thrive — regardless of their background, gender, or
+							opportunity to thrive regardless of their background, gender, or
 							location.
 						</p>
 					</div>

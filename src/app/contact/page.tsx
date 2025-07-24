@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import {
+	MessageCircleHeart,
 	Mail,
 	Phone,
 	HeartHandshake,
@@ -11,6 +12,7 @@ import {
 } from 'lucide-react';
 import Header from '@/components/Header';
 import { Inter, Gowun_Dodum } from 'next/font/google';
+import Link from 'next/link';
 
 const inter = Inter({
 	weight: ['200', '300', '400', '500', '600', '700', '800'],
@@ -46,12 +48,7 @@ const ContactPage: React.FC = () => {
 
 	return (
 		<main className="w-full flex flex-col items-center justify-start min-h-screen bg-light text-primary">
-			<Header
-				bgColor="bg-white"
-				textColor="text-primary"
-				scrolledBgColor="bg-primary"
-				scrolledTextColor="text-light"
-			/>
+			
 
 			{/* Hero Section */}
 			<section className="w-full px-4 md:px-8 py-20 mt-24 text-center space-y-6">
@@ -67,7 +64,7 @@ const ContactPage: React.FC = () => {
 					</p>
 					<p className="text-base md:text-lg">
 						Have a question, an idea, or just want to say hi? Whether you're a
-						changemaker, donor, partner, or volunteer — this is your space to
+						changemaker, donor, partner, or volunteer, this is your space to
 						reach out.
 					</p>
 				</div>
@@ -78,17 +75,20 @@ const ContactPage: React.FC = () => {
 				<ActionCard
 					icon={<Users className="w-10 h-10 mx-auto text-secondary" />}
 					title="Join Our Community"
-					description="Be part of a movement making impact across Nigeria."
+					description="Be part of a movement making impact across  Abuja, Nigeria."
+					link={{ href: '/join_us', label: ' Click to Join' }}
 				/>
 				<ActionCard
 					icon={<Handshake className="w-10 h-10 mx-auto text-secondary" />}
 					title="Partner With Us"
 					description="Align your brand with purpose and sustainable growth."
+					link={{ href: '/join_us#partner', label: 'Click to Partner' }}
 				/>
 				<ActionCard
 					icon={<HeartHandshake className="w-10 h-10 mx-auto text-secondary" />}
 					title="Volunteer Today"
 					description="Use your skills and time to directly impact lives."
+					link={{ href: '/join_us#volunteer', label: 'Click to Volunteer' }}
 				/>
 			</section>
 
@@ -100,7 +100,7 @@ const ContactPage: React.FC = () => {
 						Send Us a Message
 					</h2>
 					<p className="text-sm text-gray-600">
-						Let us know what’s on your mind — we’ll get back to you as soon as
+						Let us know what is on your mind, we will get back to you as soon as
 						possible.
 					</p>
 
@@ -165,12 +165,29 @@ const ContactPage: React.FC = () => {
 					<ContactInfo
 						icon={<Mail />}
 						title="Email Us"
-						content="kakamemorialfoundation@gmail.com"
+						link={{
+							href: 'mailto:kakamemorialfoundation@gmail.com',
+							label: 'kakamemorialfoundation@gmail.com',
+						}}
+						content="We respond within 24 hours on business days."
 					/>
 					<ContactInfo
 						icon={<Phone />}
 						title="Call Us"
-						content="+234 9028123427"
+						link={{
+							href: 'tel:+2349028123427',
+							label: '+234 9028123427',
+						}}
+						content="Available Monday to Friday, 9 AM - 5 PM WAT"
+					/>
+					<ContactInfo
+						icon={<MessageCircleHeart />}
+						title="WhatsApp Us"
+						link={{
+							href: 'tel:+2349028123427',
+							label: '+234 9028123427',
+						}}
+						content="Quick responses for urgent inquiries."
 					/>
 					<ContactInfo
 						icon={<Users />}
@@ -202,21 +219,31 @@ const ContactPage: React.FC = () => {
 };
 
 export default ContactPage;
-
 // Action Card Component
 const ActionCard = ({
 	icon,
 	title,
 	description,
+	link,
 }: {
 	icon: React.ReactNode;
 	title: string;
 	description: string;
+	link?: { href: string; label: string };
 }) => (
 	<div className="bg-white shadow-md hover:shadow-lg transition rounded-lg px-6 py-8 space-y-4">
 		{icon}
 		<h3 className="text-lg font-semibold text-primary">{title}</h3>
 		<p className="text-sm text-primary">{description}</p>
+
+		{link && (
+			<Link
+				href={link.href}
+				className="inline-block mt-4 text-sm text-secondary font-semibold hover:underline"
+			>
+				{link.label}
+			</Link>
+		)}
 	</div>
 );
 
@@ -225,10 +252,12 @@ const ContactInfo = ({
 	icon,
 	title,
 	content,
+	link,
 }: {
 	icon: React.ReactNode;
 	title: string;
 	content: string;
+	link?: { href: string; label: string };
 }) => (
 	<div>
 		<div className="flex items-center gap-2 font-semibold text-lg mb-1">
@@ -236,5 +265,13 @@ const ContactInfo = ({
 			<span>{title}</span>
 		</div>
 		<p className="text-sm">{content}</p>
+		{link && (
+			<Link
+				href={link.href}
+				className="text-sm text-secondary hover:underline mt-1"
+			>
+				{link.label}
+			</Link>
+		)}
 	</div>
 );

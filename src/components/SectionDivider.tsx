@@ -45,7 +45,7 @@ const SectionDivider = () => {
 
 			{/* Get Involved */}
 			<Link
-				href="/join-us"
+				href="/join_us"
 				className="group w-full md:flex-1 h-full px-10 md:px-16  py-8 bg-accent-two  transition-all duration-300 hover:shadow-xl hover:scale-[1.02] text-white text-center flex flex-col items-center justify-center"
 			>
 				<h3

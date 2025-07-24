@@ -39,7 +39,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
 						className="rounded-xl w-full md:w-1/3 h-auto object-cover shadow-md"
 						width={400}
 						height={480}
-						src="/team/zainab.jpeg"
+						src="/team/Zainab.jpg"
 						alt="Team member - Founder"
 					/>
 					<div className="w-full md:w-2/3 flex flex-col gap-4 text-indigo-900">
@@ -74,10 +74,10 @@ const TeamSection: React.FC<TeamSectionProps> = ({
 					/>
 					<TeamMemberCard
 						imageSrc="/team/Musa_Yahawa_Soje.jpeg"
-						altText="Team member - Desk Officer"
-						description="Acts as the first point of contact for the foundation. Manages daily operations, responds to inquiries, supports program logistics, and coordinates internal communications and reports"
+						altText="Team member - Project Coordinator "
+						description="Oversees the planning and execution of community-driven initiatives, working closely with local and other stakeholders to implement sustainable projects in education, access to clean water, and partnerships. Continues to drive the foundation’s mission of promoting social justice and inclusive growth in rural communities."
 						name="Musa Yahawa Soje"
-						role="Desk Officer"
+						role="Project Coordinator "
 						gowunFontClass={gowunFontClass}
 						niconneFontClass={niconneFontClass}
 					/>

@@ -20,7 +20,7 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
 	focusColor = 'focus:border-primary focus:ring-primary',
 }) => (
 	<div>
-		<label className="block text-sm font-medium text-gray-700">{label}</label>
+		<label className="block  text-primary">{label}</label>
 		<textarea
 			name={name}
 			value={value}

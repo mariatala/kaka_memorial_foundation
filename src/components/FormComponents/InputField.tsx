@@ -22,7 +22,7 @@ const InputField: React.FC<InputFieldProps> = ({
 	focusColor,
 }) => (
 	<div>
-		<label className="block text-sm font-medium text-gray-700">
+		<label className="block   text-primary">
 			{label} {required && <span className="text-red-500">*</span>}
 		</label>
 		<input

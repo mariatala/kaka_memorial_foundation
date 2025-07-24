@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { LucideIcon } from 'lucide-react';
+import Link from 'next/link';
+import {LucideIcon } from 'lucide-react';
 import { Gowun_Dodum, Inter } from 'next/font/google';
 
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
@@ -85,9 +86,13 @@ const EducationSection: React.FC<EducationSectionProps> = ({
 							<p className="text-primary text-sm leading-relaxed">
 								{card.description}
 							</p>
-							<button className="self-start text-sm font-medium text-secondary hover:underline transition">
+							<Link
+								className="self-start text-sm font-medium text-secondary hover:underline transition
+								duration-500 ease-in-out scroll-mt-24 "
+								href="/join_us#donate"
+							>
 								Donate Now →
-							</button>
+							</Link>
 						</div>
 					</div>
 				))}

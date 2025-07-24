@@ -9,9 +9,9 @@ import {
 	Handshake,
 	LocateFixed,
 } from 'lucide-react'; // Thin & classy icons from lucid
-import JoinUsSection from '@/sections/JoinUsCta';
+import JoinUsSection from '@/components/sections/JoinUsCta';
 import Image from 'next/image';
-import CausesSection from '@/components/CausesCard';
+import CausesCard from '@/components/CausesCard';
 import { GraduationCap, HeartHandshake, HelpingHand } from 'lucide-react';
 
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
@@ -45,15 +45,10 @@ const CausesPage = () => {
 	];
 	return (
 		<div className="bg-white text-primary font-['Inter']">
-			<section className="w-full inline-flex  h-120 justify-start items-center t">
-				<Header
-					bgColor="bg-white"
-					textColor="text-primary"
-					scrolledBgColor="bg-primary"
-					scrolledTextColor="text-light"
-				/>
+			<section className="w-full inline-flex  justify-start items-center t">
+				
 
-				<div className="w-full flex flex-col  md:flex-row items-center">
+				<div className="w-full flex flex-col md:flex-row items-center mt-40">
 					<Image
 						src="/map-1.png"
 						alt="Kaka Memorial Foundation Logo"
@@ -78,26 +73,27 @@ const CausesPage = () => {
 
 			{/* Our History Section */}
 			<section className="w-full">
-				<div className="inline-flex justify-center  my-12 sm:mt-24  md:my-0 ">
+				<div className="inline-flex justify-center  my-12 sm:mt-24 md:mt-8">
 					<p
-						className={`${gowun.className} text-lg leading-8 tracking-wide text-justify md:text-center w-full px-8 lg:w-5/6 md:px-12 lg:px-16 text-primary`}
+							className={`${gowun.className} text-lg leading-10 tracking-wide text-justify md:text-center w-full  xl:w-5/6 lg:px-8 my-8 md:mt-0 text-primary`}
 					>
-						Kaka Memorial Foundation works to improve rural communities in
-						Nigeria by advancing education, clean water access, and strong
-						partnerships. Our efforts align with the United Nations Sustainable
-						Development Goals (SDGs), adopted globally and by Nigeria, focusing
-						on quality education (SDG 4), clean water and sanitation (SDG 6),
-						and partnerships for development (SDG 17). We believe that education
-						breaks the cycle of poverty, and clean water promotes health and
-						well-being
+						Kaka Memorial Foundation is committed to transforming underserved
+						rural communities in Nigeria through strategic action on essential
+						human needs. Our core causes include expanding access to quality
+						education, ensuring the availability of clean water, promoting human
+						rights, and building inclusive partnerships for development. Aligned
+						with the United Nations Sustainable Development Goals, particularly
+						SDG 4 (Quality Education), SDG 6 (Clean Water and Sanitation), and
+						SDG 17 (Partnerships for the Goals), we believe that sustainable
+						progress begins with dignity, opportunity, and compassion for all.
 					</p>
 				</div>
 				<div className="flex flex-col gap-12 md:gap-16 px-4 md:px-16">
-					<CausesSection //Education Section
+					<CausesCard //Education Section
 						imageSrc="/education.jpeg"
 						heading="Education (SDG 4)"
 						subheading="Empower a Mind. Change a Life."
-						description="Education opens doors to opportunity, but many children in rural communities are left behind. Your support provides school fees, learning materials, and access to quality education — empowering the next generation to rise out of poverty."
+						description="Education opens doors to opportunity, but many children in rural communities are left behind. Your support provides school fees, learning materials, and access to quality education empowering the next generation to rise out of poverty."
 						cards={[
 							{
 								title: 'Sponsor an Orphan',
@@ -120,7 +116,7 @@ const CausesPage = () => {
 							},
 						]}
 					/>
-					<CausesSection // Clean Water Section
+					<CausesCard // Clean Water Section
 						imageSrc="/water.jpg"
 						heading="Clean Water (SDG 6)"
 						subheading="Clean Water is a Human Right."
@@ -134,16 +130,16 @@ const CausesPage = () => {
 							},
 						]}
 					/>
-					<CausesSection // Collaborative Projects Section
+					<CausesCard // Collaborative Projects Section
 						imageSrc="/collaborative.jpg"
 						heading="Collaborative Projects (SDG 17))"
 						subheading=" Partner with us."
-						description=" Education opens doors to opportunity, but many children in rural communities are left behind. Your support provides school fees, learning materials, and access to quality education — empowering the next generation to rise out of poverty."
+						description=" We believe real change happens through strong partnerships. At Kaka Memorial Foundation, we collaborate with NGOs, government bodies, and private sector allies to design and deliver impactful solutions in education, healthcare, clean water, and rural development. Together, we go further building sustainable progress through shared vision and action."
 						cards={[
 							{
-								title: 'Stronger Together. Impact That Lasts.',
+								title: 'Collaborate to Empower Communities',
 								description:
-									'To provide clean, safe, and accessible water to undeserved communities.',
+									'To equip rural communities with the tools, resources, and partnerships needed to build self-sustaining futures.',
 								icon: HeartHandshake,
 							},
 						]}
@@ -189,8 +185,10 @@ const CausesPage = () => {
 									<LocateFixed className="text-secondary text-sm" /> Kuje
 								</li>
 								<li className="flex items-center gap-2">
+									<LocateFixed className="text-secondary text-sm" /> Kwali
+								</li>
+								<li className="flex items-center gap-2">
 									<LocateFixed className="text-secondary text-sm" /> Municipal
-									Area Council
 								</li>
 							</ul>
 						</div>
@@ -235,7 +233,7 @@ const CausesPage = () => {
 							{
 								title: '1. Community Engagements & Discussions',
 								description:
-									'We organize public forums such as Twitter/X Spaces, webinars, town halls, and community dialogues — both online and offline. These platforms encourage open dialogue between the foundation, citizens, and stakeholders, fostering transparency, collective learning, and grassroots-driven solutions.',
+									'We organize public forums such as Twitter/X Spaces, webinars, town halls, and community dialogues, both online and offline. These platforms encourage open dialogue between the foundation, citizens, and stakeholders, fostering transparency, collective learning, and grassroots driven solutions.',
 							},
 							{
 								title: '2. Issue-Based Campaigns',

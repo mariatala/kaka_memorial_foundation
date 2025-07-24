@@ -39,7 +39,7 @@ const CtaHome = () => {
 						</div>
 					</div>
 					<div className="px-4 py-1 bg-primary flex justify-center items-center rounded-xs hover:bg-secondary active:bg-secondary focus:bg-secondary transition-colors duration-500 ease-in-out cursor-pointer">
-						<Link href="/join_us" className="text-light">
+						<Link href="/join_us#donate" className="text-light">
 							DONATE
 						</Link>
 					</div>
@@ -62,7 +62,7 @@ const CtaHome = () => {
 						</div>
 					</div>
 					<div className="px-4 py-1 bg-primary flex justify-center items-center rounded-xs hover:bg-secondary active:bg-secondary focus:bg-secondary transition-colors duration-500 ease-in-out cursor-pointer">
-						<Link href="/join_us" className="text-light">
+						<Link href="/join_us#volunteer" className="text-light">
 							VOLUNTEER
 						</Link>
 					</div>

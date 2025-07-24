@@ -55,7 +55,7 @@ const EventsCarousel: React.FC = () => {
 					</div>
 					<div className="min-w-[90%] md:min-w-[33%] snap-center shrink-0">
 						<EventCard
-							imageSrc="/aboutCopy.jpg"
+							imageSrc="/water.jpg"
 							title="Water Access Advocacy, Shapi Community, Kwali Area Council"
 							description="Through direct engagement with the Area Council Chairman, Kaka Memorial Foundation successfully advocated for improved water access for residents of Shapi community, securing a critical need in this underserved area."
 						/>

@@ -55,7 +55,7 @@ const RegistrationCard: React.FC<RegistrationCardProps> = ({ formType }) => {
 		setFormData((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
 		if (!formData.name || !formData.phone) {
@@ -63,17 +63,35 @@ const RegistrationCard: React.FC<RegistrationCardProps> = ({ formType }) => {
 			return;
 		}
 
-		console.log(`${formType.toUpperCase()} SUBMISSION:`, formData);
-		setSubmitted(true);
+		try {
+			const res = await fetch('api/register', {
+				method: 'POST',
+				headers: { 'content-type': 'application/JSON' },
+				body: JSON.stringify({
+					...formData,
+					formType,
+				}),
+			});
+			if (!res.ok) {
+				const err = await res.json();
+				throw new Error(`Error: ${err.message}` || 'Failed to submit form');
+			}
+			setSubmitted(true);
+		} catch (error: any) {
+			console.error(`Registration Error:`, error);
+			alert(
+				`Registration Failed ${error.message}` || 'Please try again later.'
+			);
+		}
 	};
 
 	return (
-		<div className="w-full max-w-4xl bg-white border border-gray-200 shadow-md rounded-md p-8 space-y-6">
+		<div className="w-full max-w-5xl mx-auto bg-white border border-gray-200 shadow-md rounded-md p-8 space-y-6">
 			<h2 className={`text-2xl font-bold ${titleColor} text-center`}>
 				{title}
 			</h2>
 
-			<p className="text-sm text-gray-600 text-center max-w-xl mx-auto">
+			<p className="text-sm text-primary text-center max-w-xl mx-auto pb-8">
 				{description}
 			</p>
 
@@ -85,7 +103,7 @@ const RegistrationCard: React.FC<RegistrationCardProps> = ({ formType }) => {
 			) : (
 				<form
 					onSubmit={handleSubmit}
-					className="grid grid-cols-1 md:grid-cols-2 gap-6"
+					className="grid grid-cols-1 md:grid-cols-2 gap-8"
 				>
 					{/* Left Column */}
 					<div className="space-y-4">
@@ -106,15 +124,14 @@ const RegistrationCard: React.FC<RegistrationCardProps> = ({ formType }) => {
 							onChange={handleChange}
 							focusColor={focusBorderColor}
 						/>
-						
-							<InputField
-								label="Point of Contact"
-								name="pointOfContact"
-								value={formData.pointOfContact || ''}
-								onChange={handleChange}
-								focusColor={focusBorderColor}
-							/>
-						
+
+						<InputField
+							label="Point of Contact"
+							name="pointOfContact"
+							value={formData.pointOfContact || ''}
+							onChange={handleChange}
+							focusColor={focusBorderColor}
+						/>
 					</div>
 
 					{/* Right Column */}

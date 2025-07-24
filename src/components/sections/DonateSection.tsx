@@ -18,7 +18,7 @@ const DonateSection: React.FC = () => {
 	const handleAmount = (value: number | 'Other') => setAmount(value);
 
 	return (
-		<section className="w-full bg-primary text-light flex flex-col pl-8 lg:flex-row">
+		<section id='donate'  className="w-full bg-primary text-light flex flex-col pl-8 lg:flex-row scroll-mt-24">
 			{/* Left: Donation Form */}
 			<div className="w-full lg:w-2/3 px-6 py-10 space-y-6">
 				<h2 className="text-2xl font-semibold">

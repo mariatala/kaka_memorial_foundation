@@ -40,7 +40,7 @@ const AboutSection = () => {
 					</span>
 
 					<span
-						className={`block text-primary text-lg mt-4 font-semibold ${inter.className} animate-bounce leading-8 tracking-wide hover:underline decoration-secondary`}
+						className={`block text-primary text-lg mt-4 font-semibold ${inter.className}  animate-pulse leading-8 tracking-wide hover:underline decoration-secondary`}
 					>
 						<Link href={'/about'}>Read More</Link>
 					</span>

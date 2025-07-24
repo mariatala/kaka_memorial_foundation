@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Header from '@/components/Header';
-import EventsSection from '@/sections/EventsSection';
+import EventsSection from '@/components/sections/EventsSection';
 import { Heart } from 'lucide-react';
 import { Inter, Gowun_Dodum } from 'next/font/google';
 import Link from 'next/link';
@@ -14,12 +14,7 @@ const EventsPage = () => {
 	return (
 		<div className="w-full h-full flex flex-col">
 			<section className="w-full flex min-h-[32rem] md:min-h-[30rem] justify-start items-center py-8 md:py-0">
-				<Header
-					bgColor="bg-white"
-					textColor="text-primary"
-					scrolledBgColor="bg-primary"
-					scrolledTextColor="text-light"
-				/>
+				
 
 				<div className="w-full flex flex-col-reverse  md:flex-row mt-16 justify-end items-center">
 					<div className="w-full flex flex-col justify-center items-start">
@@ -40,7 +35,8 @@ const EventsPage = () => {
 								<p
 									className={` text-lg md:text-xl my-4 text-secondary font-semibold tracking-wide ${inter.className}`}
 								>
-									Make a Difference With Us
+									Join us, because kindness in action builds the future we all
+									deserve.
 								</p>
 								<div className="grid grid-cols-2 md:grid-cols-3 items-center gap-4 mt-6 max-w-fit">
 									<Link
@@ -51,14 +47,14 @@ const EventsPage = () => {
 										<Heart className=" h-5 w-5 ml-1 text-accent-three-light" />
 									</Link>
 									<Link
-										href="/join_us"
+										href="/join_us#donate"
 										className={`bg-secondary text-light flex items-center gap-2 px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-primary hover:text-secondary transition-all duration-300`}
 									>
 										Donate
 										<Heart className=" h-5 w-5 ml-1 text-accent-three-light" />
 									</Link>
 									<Link
-										href="/join_us"
+										href="/join_us#volunteer"
 										className={`bg-accent-three-light text-primary border border-primary flex items-center gap-2 px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-primary hover:text-light transition-all duration-300`}
 									>
 										Volunteer

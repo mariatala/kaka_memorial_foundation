@@ -1,22 +1,27 @@
-import React from 'react';
+'use client';
+
+import Link from 'next/link';
+import LoginComponent from '@/components/LoginComponent';
 import { Mail, PhoneCall, MapPin, MessageCircleHeart } from 'lucide-react';
 import { Inter, Gowun_Dodum } from 'next/font/google';
+
 const inter = Inter({
 	weight: ['200', '300', '400', '500', '600', '700', '800'],
 	subsets: ['latin'],
 });
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
 
-const Footer = () => {
+const Footer: React.FC = () => {
+	
 	return (
 		<footer className="flex flex-col justify-center">
 			<div className="w-full flex flex-col lg:flex-row mx-auto">
 				{/* Left Column */}
 				<div className="bg-primary w-full lg:w-2/3">
 					<div className="flex flex-col text-light p-8 md:p-12 lg:p-16 h-full">
-						<div className="w-full  flex flex-col justify-center items-start gap-2">
+						<div className="w-full flex flex-col justify-center items-start gap-2">
 							<h3
-								className={`text-3xl md:text-5xl  tracking-widest uppercase text-light ${gowun.className}`}
+								className={`text-3xl md:text-5xl tracking-widest uppercase text-light ${gowun.className}`}
 							>
 								Contact Us:
 							</h3>
@@ -25,6 +30,7 @@ const Footer = () => {
 								Let's talk, your voice matters
 							</h4>
 						</div>
+
 						<p
 							className={`mt-8 tracking-wider text-accent-three text-sm leading-7 ${gowun.className}`}
 						>
@@ -42,27 +48,30 @@ const Footer = () => {
 							<div className="flex flex-col gap-4 text-sm font-light">
 								<p className="flex items-center gap-2">
 									<Mail />
-									<a href="mailto:kakafoundation@gmail.com">
+									<Link href="mailto:kakafoundation@gmail.com">
 										kakafoundation@gmail.com
-									</a>
+									</Link>
 								</p>
 								<p className="flex items-center gap-2">
 									<PhoneCall />
-									<a href="tel:+1234567890">+1 (234) 567-890</a>
+									<Link href="tel:+1234567890">+1 (234) 567-890</Link>
 								</p>
 								<p className="flex items-center gap-2">
 									<MapPin />
 									123 Charity Lane, City, State, Zip Code
 								</p>
 								<p className="flex items-center gap-2">
-									<MessageCircleHeart />{' '}
-									<a href="https://wa.me/1234567890">+1 (234) 567-890</a>
+									<MessageCircleHeart />
+									<Link href="https://wa.me/1234567890">+1 (234) 567-890</Link>
 								</p>
 								<p className="flex items-center gap-4">
-									Registered Charity:193031
+									Registered Charity: 193031
 								</p>
 							</div>
 						</div>
+
+						{/* Admin Login Section */}
+						<LoginComponent />
 					</div>
 				</div>
 
@@ -80,12 +89,12 @@ const Footer = () => {
 							Stay informed and inspired
 						</h5>
 						<p
-							className={`tracking-wider text-sm leading-7 mb-6  ${gowun.className}`}
+							className={`tracking-wider text-sm leading-7 mb-6 ${gowun.className}`}
 						>
 							Sign up for our newsletter to get the latest updates, inspiring
 							stories, and ways to get involved with Kaka Memorial Foundation.
 						</p>
-						<form className={`flex flex-col gap-4  ${inter.className}`}>
+						<form className={`flex flex-col gap-4 ${inter.className}`}>
 							<div>
 								<label
 									htmlFor="email"

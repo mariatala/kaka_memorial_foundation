@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import Header from '@/components/Header';
+
 import RegistrationCard from '@/components/RegistrationCard';
 import { Heart } from 'lucide-react';
 import { Inter, Gowun_Dodum } from 'next/font/google';
 import Link from 'next/link';
-import DonateSection from '@/sections/DonateSection';
-import JoinUsSection from '@/sections/JoinUsCta';
+import DonateSection from '@/components/sections/DonateSection';
+import JoinUsSection from '@/components/sections/JoinUsCta';
 const inter = Inter({
 	weight: ['200', '300', '400', '500', '600', '700', '800'],
 	subsets: ['latin'],
@@ -16,13 +16,6 @@ const EventsPage = () => {
 	return (
 		<div className="w-full h-full flex flex-col">
 			<section className="w-full flex min-h-[32rem] md:min-h-[30rem] justify-start items-center py-8 md:py-0">
-				<Header
-					bgColor="bg-white"
-					textColor="text-primary"
-					scrolledBgColor="bg-primary"
-					scrolledTextColor="text-light"
-				/>
-
 				<div className="w-full flex flex-col-reverse  md:flex-row mt-16 justify-end items-center">
 					<div className="w-full flex flex-col justify-center items-start">
 						<div className="w-full flex flex-col-reverse md:flex-row items-center">
@@ -46,21 +39,22 @@ const EventsPage = () => {
 								</p>
 								<div className="grid grid-cols-2 md:grid-cols-3 items-center gap-4 mt-6 max-w-fit">
 									<Link
-										href="/join_us"
+										href="/join_us#partner"
 										className={`bg-primary text-light flex items-center gap-2 px-2 sm:px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-secondary hover:text-primary transition-all duration-300`}
 									>
-										Join Us
+										Partner
 										<Heart className=" h-5 w-5 ml-1 text-accent-three-light" />
 									</Link>
 									<Link
-										href="/join_us"
+										href="/join_us#donate"
 										className={`bg-secondary text-light flex items-center gap-2 px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-primary hover:text-secondary transition-all duration-300`}
 									>
 										Donate
 										<Heart className=" h-5 w-5 ml-1 text-accent-three-light" />
 									</Link>
+
 									<Link
-										href="/join_us"
+										href="/join_us#volunteer"
 										className={`bg-accent-three-light text-primary border border-primary flex items-center gap-2 px-4 py-2 rounded-sm shadow-md text-sm  ${inter.className} tracking-wide hover:bg-primary hover:text-light transition-all duration-300`}
 									>
 										Volunteer
@@ -74,9 +68,15 @@ const EventsPage = () => {
 			</section>
 
 			{/*Partner Card Section*/}
-			<section className=" w-full flex flex-col justify-center items-center gap-32 py-12 sm:py-16 md:py-24  px-2 sm:px-8 md:px-16 lg:px-32 bg-light ">
-				<RegistrationCard formType="partner" />
-				<RegistrationCard formType="volunteer" />
+			<section className=" w-full flex flex-col justify-center items-center gap-32 py-12 sm:py-16 md:py-24 px-2 sm:px-8 md:px-16 bg-light ">
+				<div id="partner" className="w-full scroll-mt-24">
+					<RegistrationCard formType="partner" />
+				</div>
+
+				<div id="volunteer" className=" w-full scroll-mt-24">
+					<RegistrationCard formType="volunteer" />
+				</div>
+
 				<DonateSection />
 			</section>
 
