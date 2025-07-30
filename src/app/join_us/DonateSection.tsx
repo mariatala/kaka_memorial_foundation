@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import PayPalPayment from '@/components/PayPalPayment';
 import { Inter, Gowun_Dodum } from 'next/font/google';
 const inter = Inter({
 	weight: ['200', '300', '400', '500', '600', '700', '800'],
@@ -17,8 +18,13 @@ const DonateSection: React.FC = () => {
 		setFrequency(value);
 	const handleAmount = (value: number | 'Other') => setAmount(value);
 
+	const [showModal, setShowModal] = useState(false);
+
 	return (
-		<section id='donate'  className="w-full bg-primary text-light flex flex-col pl-8 lg:flex-row scroll-mt-24">
+		<section
+			id="donate"
+			className="w-full bg-primary text-light flex flex-col pl-8 lg:flex-row scroll-mt-24"
+		>
 			{/* Left: Donation Form */}
 			<div className="w-full lg:w-2/3 px-6 py-10 space-y-6">
 				<h2 className="text-2xl font-semibold">
@@ -46,6 +52,7 @@ const DonateSection: React.FC = () => {
 					<div className="flex gap-4">
 						{['One time', 'Monthly'].map((type) => (
 							<button
+								type="button"
 								key={type}
 								onClick={() => handleFrequency(type as 'One time' | 'Monthly')}
 								className={`px-4 py-2 rounded-xs bg-light text-primary font-semibold ${
@@ -64,6 +71,7 @@ const DonateSection: React.FC = () => {
 					<div className="grid grid-cols-3 gap-4 max-w-md">
 						{[10, 50, 100, 200, 'Other'].map((val) => (
 							<button
+								type="button"
 								key={val}
 								onClick={() => handleAmount(val as number | 'Other')}
 								className={`px-4 py-2 rounded-xs bg-light text-primary font-semibold ${
@@ -74,17 +82,43 @@ const DonateSection: React.FC = () => {
 							</button>
 						))}
 					</div>
+					{amount === 'Other' && (
+						<input
+							type="number"
+							min={1}
+							className="mt-4 px-4 py-2 rounded-xs bg-light text-primary border border-secondary w-40"
+							placeholder="Enter amount"
+							onChange={(e) => setAmount(Number(e.target.value))}
+						/>
+					)}
 				</div>
 
 				{/* Submit */}
 				<div>
-					<button className="w-full max-w-md bg-secondary hover:bg-secondary transition text-primary font-bold py-3 rounded-xs">
-						Donate {typeof amount === 'number' ? `$${amount}` : 'Now'}{' '}
-						{frequency}
-					</button>
+					<form
+						className="w-full max-w-md"
+						onSubmit={(e) => {
+							e.preventDefault();
+							// Replace this with your payment integration or API call
+							setShowModal(true);
+						}}
+					>
+						<button
+							type="submit"
+							className="w-full bg-secondary hover:bg-secondary transition text-primary font-bold py-3 rounded-xs"
+							disabled={
+								amount === 'Other' ||
+								(typeof amount === 'number' && amount <= 0)
+							}
+						>
+							Donate {typeof amount === 'number' ? `$${amount}` : 'Now'}{' '}
+							{frequency}
+						</button>
+					</form>
 				</div>
 			</div>
 
+			<PayPalPayment />
 			{/* Right: Contact Info */}
 			<div className="w-full lg:w-1/3 flex flex-col justify-evenly items-center text-center bg-accent-three text-primary px-6 py-10 space-y-12">
 				<div>
@@ -116,6 +150,24 @@ const DonateSection: React.FC = () => {
 					</p>
 				</div>
 			</div>
+			{/* Modal for Thank You Message */}
+
+			{showModal && (
+				<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+					<div className="bg-white text-primary p-8 rounded shadow-lg max-w-sm w-full text-center">
+						<h3 className="text-xl font-bold mb-4">
+							Thank you for your donation!
+						</h3>
+						<p>Your support makes a difference.</p>
+						<button
+							className="mt-6 px-4 py-2 bg-secondary text-light rounded"
+							onClick={() => setShowModal(false)}
+						>
+							Close
+						</button>
+					</div>
+				</div>
+			)}
 		</section>
 	);
 };

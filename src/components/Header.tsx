@@ -124,7 +124,7 @@ export default function Header() {
 					{session && (
 						<button
 							onClick={handleSignOut}
-							className="ml-4 text-base px-4 py-2 rounded border hover:bg-secondary hover:text-light transition"
+							className="ml-4 text-sm px-4 py-2 uppercase rounded border hover:bg-secondary hover:text-light transition"
 						>
 							Sign Out
 						</button>

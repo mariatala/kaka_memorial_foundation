@@ -35,14 +35,31 @@ const ContactPage: React.FC = () => {
 		setForm((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const handleSubmit = (e: React.FormEvent) => {
+	// Note: Sending email directly from frontend is not secure or reliable.
+	// You should send the form data to an API route or backend server,
+	// which then sends the email using a service like Nodemailer, SendGrid, etc.
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		if (!form.name || !form.email || !form.message) {
 			alert('Please fill in all required fields.');
 			return;
 		}
-		console.log('Contact Form Submission:', form);
-		setSubmitted(true);
+
+		try {
+			// Send form data to your API route (e.g., /api/contact)
+			const res = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(form),
+			});
+			if (res.ok) {
+				setSubmitted(true);
+			} else {
+				alert('Failed to send message. Please try again later.');
+			}
+		} catch (error) {
+			alert('An error occurred. Please try again later.');
+		}
 	};
 
 	return (

@@ -13,9 +13,7 @@ type Registration = {
 	email: string;
 	formType: string;
 	phone: string;
-	pointOfContact?: string;
 	address?: string;
-	socialLinks?: string;
 	message?: string;
 	createdAt: string;
 };
