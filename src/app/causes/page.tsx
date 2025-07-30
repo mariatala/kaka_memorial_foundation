@@ -247,17 +247,17 @@ const CausesPage = () => {
 								key={index}
 								className="relative bg-white shadow-lg border-l-2 border-r-2 md:border-r-0  border-primary rounded-xl p-6 md:p-10 flex  gap-6 items-start"
 							>
-								<div className="text-secondary flex-shrink-0">
+								<div className="text-secondary flex-shrink-0 text-xl">
 									{React.cloneElement(causesIcons[index], { key: index })}
 								</div>
 								<div className="flex flex-col space-y-4">
 									<h3
-										className={`text-lg md:text-2xl tracking-wide font-bold ${inter.className}`}
+										className={`text-lg md:text-xl tracking-wide font-semibold ${inter.className}`}
 									>
 										{item.title}
 									</h3>
 									<p
-										className={`leading-loose max-w-3xl text-sm md:text-base text-left text-primary ${inter.className}`}
+										className={`${gowun.className} text leading-8 tracking-wide text-justify w-full  xl:w-5/6 lg:px-8 my-8 md:mt-0 text-primary`}
 									>
 										{item.description}
 									</p>

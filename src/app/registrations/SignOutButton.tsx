@@ -9,7 +9,7 @@ export default function SignOutButton() {
   return (
     <button
       onClick={() => signOut({ callbackUrl: '/' })}
-      className="text-sm text-secondary underline hover:text-secondary/80"
+      className="text-sm text-secondary  hover:text-secondary/80"
     >
       Sign Out
     </button>

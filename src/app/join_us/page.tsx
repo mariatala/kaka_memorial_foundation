@@ -1,9 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-
-import RegistrationCard from '@/app/join_us/RegistrationCard';
 import { Heart } from 'lucide-react';
 import { Inter, Gowun_Dodum } from 'next/font/google';
+import RegistrationCard from '@/app/join_us/RegistrationCard';
 import Link from 'next/link';
 import DonateSection from '@/app/join_us/DonateSection';
 import JoinUsSection from '@/components/main_page_sections/JoinUsCta';

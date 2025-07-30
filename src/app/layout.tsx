@@ -5,7 +5,7 @@ import Providers from '@/components/Providers';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import Header from '@/components/Header';
-import FooterController from '@/components/FooterController';
+import Footer from '@/components/Footer';
 
 const nunito = Nunito({
 	weight: ['200', '300', '400', '500', '700'],
@@ -26,7 +26,7 @@ export default async function RootLayout({
 				<Providers session={session}>
 					<Header />
 					<main> {children}</main>
-					<FooterController />
+					<Footer />
 				</Providers>
 			</body>
 		</html>
