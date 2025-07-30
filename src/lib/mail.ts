@@ -24,6 +24,7 @@ export async function sendNotificationEmail(reg: any) {
       Name: ${reg.name}
       Phone: ${reg.phone}
       Contact: ${reg.pointOfContact || '—'}
+      Email: ${reg.email || '—'}
       Address: ${reg.address || '—'}
       Links: ${reg.socialLinks || '—'}
       Message: ${reg.message || '—'}

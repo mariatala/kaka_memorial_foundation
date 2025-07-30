@@ -44,7 +44,14 @@ export default function Header() {
 	const [scrolled, setScrolled] = useState(false);
 
 	// define which top-level paths use the "alt" variant
-	const altPaths = ['causes', 'events', 'join_us', 'contact','login'] as const;
+	const altPaths = [
+		'causes',
+		'events',
+		'join_us',
+		'contact',
+		'login',
+		'registrations',
+	] as const;
 	const segment = pathname.split('/')[1]; // the first path segment
 	const variantKey = altPaths.includes(segment as (typeof altPaths)[number])
 		? 'alt'
@@ -62,8 +69,12 @@ export default function Header() {
 	const toggleMenu = () => setIsOpen((o) => !o);
 
 	const handleSignOut = async () => {
-		await signOut({ redirect: false });
-		router.push('/');
+		
+
+		await signOut({
+			// NextAuth will clear cookies server-side and then redirect to `/`
+			callbackUrl: '/',
+		});
 	};
 
 	const links = [
@@ -92,6 +103,7 @@ export default function Header() {
 				<Link href="/" className="flex items-center">
 					<Image
 						src="/Logo.png"
+						priority={false}
 						alt="Logo"
 						width={100}
 						height={100}

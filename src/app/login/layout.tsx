@@ -1,20 +1,17 @@
-"use client";
-import RegistrationFooter from '@/components/admin/RegistrationFooter';
-import Header from '@/components/Header'
+'use client';
+import RegistrationFooter from '@/app/registrations/RegistrationFooter';
+import Header from '@/components/Header';
 
 export default function RegistrationLayout({
-    children,
+	children,
 }: {
-    children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-    return (
-        <div className="flex flex-col min-h-screen justify-between bg-gray-100">
-           
-            <main className='my-auto' >
-                {children}
-            </main>
-            {/* Overide the RootLayout <Footer /> */}
-            <RegistrationFooter />
-        </div>
-    );
+	return (
+		<div className="flex flex-col min-h-screen justify-between bg-gray-100">
+			<main className="my-auto">{children}</main>
+			{/* Overide the RootLayout <Footer /> */}
+			<RegistrationFooter />
+		</div>
+	);
 }

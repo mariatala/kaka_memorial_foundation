@@ -1,5 +1,5 @@
 import React from 'react';
-import EventsCarousel from '@/components/RecentEventsCarausel';
+import EventsCarousel from '@/components/main_page_sections/recent_events_advocacy/RecentEventsCarausel';
 import { Gowun_Dodum } from 'next/font/google';
 
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });

@@ -1,8 +1,8 @@
 'use client';
-import Header from '@/components/Header';
-import TeamSection from '@/components/sections/TeamsSection';
-import History from '@/components/sections/History';
-import MissionVisionSection from '@/components/sections/MissionVision';
+
+import TeamSection from '@/app/about/TeamsSection';
+import History from '@/app/about/History';
+import MissionVisionSection from '@/app/about/MissionVision';
 import { Niconne, Gowun_Dodum, Inter } from 'next/font/google';
 
 const niconne = Niconne({ weight: '400', subsets: ['latin'] });

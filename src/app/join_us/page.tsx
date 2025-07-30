@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 
-import RegistrationCard from '@/components/RegistrationCard';
+import RegistrationCard from '@/app/join_us/RegistrationCard';
 import { Heart } from 'lucide-react';
 import { Inter, Gowun_Dodum } from 'next/font/google';
 import Link from 'next/link';
-import DonateSection from '@/components/sections/DonateSection';
-import JoinUsSection from '@/components/sections/JoinUsCta';
+import DonateSection from '@/app/join_us/DonateSection';
+import JoinUsSection from '@/components/main_page_sections/JoinUsCta';
 const inter = Inter({
 	weight: ['200', '300', '400', '500', '600', '700', '800'],
 	subsets: ['latin'],

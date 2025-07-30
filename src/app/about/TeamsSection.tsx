@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import TeamMemberCard from '@/components/TeamMemberCard';
+import TeamMemberCard from '@/app/about/TeamMemberCard';
 import { Gowun_Dodum } from 'next/font/google';
 
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });

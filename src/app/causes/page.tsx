@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Header from '@/components/Header';
 import { Gowun_Dodum, Inter } from 'next/font/google';
 import {
 	HandHeart,
@@ -9,9 +8,9 @@ import {
 	Handshake,
 	LocateFixed,
 } from 'lucide-react'; // Thin & classy icons from lucid
-import JoinUsSection from '@/components/sections/JoinUsCta';
+import JoinUsSection from '@/components/main_page_sections/JoinUsCta';
 import Image from 'next/image';
-import CausesCard from '@/components/CausesCard';
+import CausesCard from '@/app/causes/CausesCard';
 import { GraduationCap, HeartHandshake, HelpingHand } from 'lucide-react';
 
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
@@ -46,8 +45,6 @@ const CausesPage = () => {
 	return (
 		<div className="bg-white text-primary font-['Inter']">
 			<section className="w-full inline-flex  justify-start items-center t">
-				
-
 				<div className="w-full flex flex-col md:flex-row items-center mt-40">
 					<Image
 						src="/map-1.png"
@@ -75,7 +72,7 @@ const CausesPage = () => {
 			<section className="w-full">
 				<div className="inline-flex justify-center  my-12 sm:mt-24 md:mt-8">
 					<p
-							className={`${gowun.className} text-lg leading-10 tracking-wide text-justify md:text-center w-full  xl:w-5/6 lg:px-8 my-8 md:mt-0 text-primary`}
+						className={`${gowun.className} text-lg leading-10 tracking-wide text-justify md:text-center w-full  xl:w-5/6 lg:px-8 my-8 md:mt-0 text-primary`}
 					>
 						Kaka Memorial Foundation is committed to transforming underserved
 						rural communities in Nigeria through strategic action on essential

@@ -20,6 +20,7 @@ model Registration {
   name           String
   phone          String
   pointOfContact String?
+  email          String?
   address        String?
   socialLinks    String?
   message        String?

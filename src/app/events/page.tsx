@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Header from '@/components/Header';
-import EventsSection from '@/components/sections/EventsSection';
+import EventsSection from '@/app/events/EventsSection';
 import { Heart } from 'lucide-react';
 import { Inter, Gowun_Dodum } from 'next/font/google';
 import Link from 'next/link';

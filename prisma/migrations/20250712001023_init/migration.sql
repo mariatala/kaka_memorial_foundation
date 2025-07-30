@@ -5,6 +5,7 @@ CREATE TABLE "Registration" (
     "name" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
     "pointOfContact" TEXT,
+    "email" TEXT,
     "address" TEXT,
     "socialLinks" TEXT,
     "message" TEXT,

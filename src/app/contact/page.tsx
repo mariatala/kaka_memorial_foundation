@@ -10,7 +10,6 @@ import {
 	Handshake,
 	HandHeart,
 } from 'lucide-react';
-import Header from '@/components/Header';
 import { Inter, Gowun_Dodum } from 'next/font/google';
 import Link from 'next/link';
 

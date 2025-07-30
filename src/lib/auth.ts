@@ -21,9 +21,25 @@ export const authOptions: AuthOptions = {
 			},
 		}),
 	],
-	session: { strategy: 'jwt' }, // No need for 'as SessionStrategy' if authOptions is typed as AuthOptions
+	session: {
+		strategy: 'jwt',
+		maxAge: 60 * 24 * 60 * 60, // 60 days
+		updateAge: 24 * 60 * 60, // re-issue daily
+	},
+	// optionally customize the cookie TTL to match:
+	cookies: {
+		sessionToken: {
+			name: 'next-auth.session-token',
+			options: {
+				httpOnly: true,
+				sameSite: 'lax',
+				path: '/',
+				secure: process.env.NODE_ENV === 'production',
+				maxAge: 60 * 24 * 60 * 60, // align with session.maxAge
+			},
+		},
+	},
 	secret: process.env.NEXTAUTH_SECRET,
 };
 
 export default NextAuth(authOptions);
-

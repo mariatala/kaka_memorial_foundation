@@ -1,4 +1,4 @@
-import EventsCard from '@/components/EventsCard';
+import EventsCard from '@/app/events/EventsCard';
 import { Gowun_Dodum, Inter } from 'next/font/google';
 
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });

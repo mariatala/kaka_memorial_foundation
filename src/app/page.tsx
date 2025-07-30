@@ -1,10 +1,10 @@
-import Hero from '@/components/sections/Hero';
-import AboutSection from '@/components/sections/AboutSection';
+import Hero from '@/components/main_page_sections/Hero';
+import AboutSection from '@/components/main_page_sections/AboutSection';
 import SectionDivider from '@/components/SectionDivider';
-import StatsSection from '@/components/sections/StatsSection';
-import CtaHome from '@/components/sections/CtaHome';
-import RecentProjects from '@/components/sections/RecentProjects';
-import JoinUsSection from '@/components/sections/JoinUsCta';
+import StatsSection from '@/components/StatsSection';
+import CtaHome from '@/components/main_page_sections/CtaHome';
+import RecentProjects from '@/components/main_page_sections/recent_events_advocacy/RecentProjects';
+import JoinUsSection from '@/components/main_page_sections/JoinUsCta';
 
 export default function Home() {
 	return (

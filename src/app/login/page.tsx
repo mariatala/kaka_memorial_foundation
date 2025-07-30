@@ -37,12 +37,12 @@ export default function LoginPage() {
 			setError('Invalid username or password');
 		} else {
 			router.push('/registrations');
+			router.refresh();
 		}
 	};
 
 	return (
 		<main className="flex flex-col items-center justify-center p-4">
-			
 			<h1 className="text-2xl mb-4">Administrator Login</h1>
 			<form
 				onSubmit={handleSubmit}
@@ -79,4 +79,14 @@ export default function LoginPage() {
 			</Link>
 		</main>
 	);
+}
+import {NextResponse} from  'next/server'
+import {NextRequest} from  'next/server'
+
+export function middleware(request: NextRequest){
+	return NextResponse.redirect( new URL('/', request.url));
+}
+
+export const config ={
+	matcher:'/profile'
 }

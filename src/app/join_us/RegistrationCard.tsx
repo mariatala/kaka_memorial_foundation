@@ -8,6 +8,7 @@ interface RegistrationFormData {
 	name: string;
 	phone: string;
 	pointOfContact?: string;
+	email?: string;
 	address?: string;
 	socialLinks?: string;
 	message?: string;
@@ -24,6 +25,7 @@ const RegistrationCard: React.FC<RegistrationCardProps> = ({ formType }) => {
 		name: '',
 		phone: '',
 		pointOfContact: '',
+		email: '',
 		address: '',
 		socialLinks: '',
 		message: '',
@@ -136,6 +138,14 @@ const RegistrationCard: React.FC<RegistrationCardProps> = ({ formType }) => {
 
 					{/* Right Column */}
 					<div className="space-y-4">
+						<InputField
+							label="Email (optional)"
+							name="email"
+							type="email"
+							value={formData.email || ''}
+							onChange={handleChange}
+							focusColor={focusBorderColor}/>
+
 						<TextAreaField
 							label="Address"
 							name="address"
