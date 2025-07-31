@@ -45,21 +45,21 @@ const ContactPage: React.FC = () => {
 			return;
 		}
 
-		// try {
-		// 	// Send form data to your API route (e.g., /api/contact)
-		// 	const res = await fetch('/api/contact', {
-		// 		method: 'POST',
-		// 		headers: { 'Content-Type': 'application/json' },
-		// 		body: JSON.stringify(form),
-		// 	});
-		// 	if (res.ok) {
-		// 		setSubmitted(true);
-		// 	} else {
-		// 		alert('Failed to send message. Please try again later.');
-		// 	}
-		// } catch (error: unknown) {
-		// 	alert('An error occurred. Please try again later.');
-		// }
+		try {
+			// Send form data to your API route (e.g., /api/contact)
+			const res = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(form),
+			});
+			if (res.ok) {
+				setSubmitted(true);
+			} else {
+				alert('Failed to send message. Please try again later.');
+			}
+		} catch (error: unknown) {
+			alert('An error occurred. Please try again later.');
+		}
 	};
 
 	return (
