@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import RegistrationsTable from '@/app/registrations/RegistrationsTable';
 
-export type Registration = {
+export type RegistrationData = {
 	id: string;
 	type: 'volunteer' | 'partner';
 	name: string;
@@ -22,7 +22,7 @@ export type Registration = {
 export default function RegistrationsList({
 	initialData,
 }: {
-	initialData: Registration[];
+	initialData: RegistrationData[];
 }) {
 	const { data: session } = useSession();
 	const [filter, setFilter] = useState<'all' | 'volunteer' | 'partner'>('all');

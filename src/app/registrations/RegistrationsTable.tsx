@@ -3,7 +3,7 @@
 import React from 'react';
 import { format } from 'date-fns';
 
-export interface Registration {
+export interface RegistrationData {
 	id: string;
 	formType: string;
 	name: string;
@@ -15,7 +15,7 @@ export interface Registration {
 }
 
 interface Props {
-	data: Registration[];
+	data: RegistrationData[];
 }
 
 export default function RegistrationsList({ data }: Props) {
