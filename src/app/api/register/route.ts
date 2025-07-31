@@ -28,7 +28,14 @@ export async function POST(req: NextRequest) {
 			},
 		});
 		// 3. (Optional) Send notification email
-		await sendNotificationEmail(record);
+		await sendNotificationEmail({
+			...record,
+			pointOfContact: record.pointOfContact ?? undefined,
+			email: record.email ?? undefined,
+			address: record.address ?? undefined,
+			socialLinks: record.socialLinks ?? undefined,
+			message: record.message ?? undefined,
+		});
 
 		return NextResponse.json({ success: true, id: record.id });
 	} catch (err) {

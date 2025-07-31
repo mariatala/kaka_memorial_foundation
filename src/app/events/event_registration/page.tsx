@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Header from '@/components/Header';
 import { Gowun_Dodum, Inter } from 'next/font/google';
 const inter = Inter({
 	weight: ['200', '300', '400', '500', '600', '700', '800'],

@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
 import { HeartHandshake, Menu, X } from 'lucide-react';
 import { Inter } from 'next/font/google';
@@ -38,7 +38,6 @@ const variants: Record<'default' | 'alt', StyleVariant> = {
 
 export default function Header() {
 	const { data: session } = useSession();
-	const router = useRouter();
 	const pathname = usePathname();
 	const [isOpen, setIsOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
@@ -69,8 +68,6 @@ export default function Header() {
 	const toggleMenu = () => setIsOpen((o) => !o);
 
 	const handleSignOut = async () => {
-		
-
 		await signOut({
 			// NextAuth will clear cookies server-side and then redirect to `/`
 			callbackUrl: '/',

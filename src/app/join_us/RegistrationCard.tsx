@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import InputField from '@/components/FormComponents/InputField';
 import TextAreaField from '@/components/FormComponents/TextAreaField';
-import { useRouter } from 'next/navigation';
 import { Gowun_Dodum } from 'next/font/google';
 
 const gowun = Gowun_Dodum({ weight: '400', subsets: ['latin'] });
@@ -23,8 +22,7 @@ interface RegistrationCardProps {
 }
 
 const RegistrationCard: React.FC<RegistrationCardProps> = ({ formType }) => {
-	const replace = useRouter().replace;
-	// State to manage form submission status
+
 	const [pending, setPending] = useState(false);
 	// State to manage form data
 	const [formData, setFormData] = useState<RegistrationFormData>({
@@ -89,10 +87,10 @@ const RegistrationCard: React.FC<RegistrationCardProps> = ({ formType }) => {
 				throw new Error(`Error: ${err.message}` || 'Failed to submit form');
 			}
 			setSubmitted(true);
-		} catch (error: any) {
+		} catch (error: unknown) {
 			console.error(`Registration Error:`, error);
 			alert(
-				`Registration Failed ${error.message}` || 'Please try again later.'
+				`Registration Failed ${error instanceof Error ? error.message : ''}` || 'Please try again later.'
 			);
 		} finally {
 			setPending(false);

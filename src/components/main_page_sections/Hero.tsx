@@ -1,9 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Header from '@/components/Header'; // Make sure the path is correct
 import { FaFacebook } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa6';
 import { FaXTwitter } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa';
 import { Inter } from 'next/font/google';

@@ -2,13 +2,7 @@
 
 import { motion, AnimatePresence, easeInOut, easeOut } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import {
-	useState,
-	useEffect,
-	Children,
-	isValidElement,
-	cloneElement,
-} from 'react';
+import { useState, useEffect, Children, isValidElement } from 'react';
 import Image from 'next/image';
 
 // Animation presets
@@ -23,7 +17,7 @@ const fadeInUp = {
 
 const staggerContainer = {
 	hidden: {},
-	visible: { transition: { staggerChildren: 0.8} },
+	visible: { transition: { staggerChildren: 0.8 } },
 };
 
 interface PageTransitionProps {
@@ -62,7 +56,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
 					initial="hidden"
 					animate={index === 0 ? 'visible' : undefined} // First section animates immediately
 					whileInView={index > 0 ? 'visible' : undefined} // Others animate on scroll
-					viewport={{ once: true, amount: 0.8}}
+					viewport={{ once: true, amount: 0.8 }}
 				>
 					{child}
 				</motion.div>
