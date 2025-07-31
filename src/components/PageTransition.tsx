@@ -1,24 +1,9 @@
 'use client';
 
-import { motion, AnimatePresence, easeInOut, easeOut } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect, Children, isValidElement } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-
-// Animation presets
-const fadeInUp = {
-	hidden: { opacity: 0, y: 20 },
-	visible: {
-		opacity: 1,
-		y: 0,
-		transition: { duration: 0.6, ease: easeOut },
-	},
-};
-
-const staggerContainer = {
-	hidden: {},
-	visible: { transition: { staggerChildren: 0.8 } },
-};
 
 interface PageTransitionProps {
 	children: React.ReactNode;
@@ -29,9 +14,9 @@ export default function PageTransition({ children }: PageTransitionProps) {
 	const [isFirstLoad, setIsFirstLoad] = useState(true);
 	const [isTransitioning, setIsTransitioning] = useState(false);
 
-	// Handle first load
+	// Handle first page load
 	useEffect(() => {
-		const timer = setTimeout(() => setIsFirstLoad(false), 800);
+		const timer = setTimeout(() => setIsFirstLoad(false), 500); // show loader for 0.5s
 		return () => clearTimeout(timer);
 	}, []);
 
@@ -39,31 +24,12 @@ export default function PageTransition({ children }: PageTransitionProps) {
 	useEffect(() => {
 		if (!isFirstLoad) {
 			setIsTransitioning(true);
-			const timer = setTimeout(() => setIsTransitioning(false), 600);
+			const timer = setTimeout(() => setIsTransitioning(false), 300);
 			return () => clearTimeout(timer);
 		}
 	}, [pathname, isFirstLoad]);
 
 	const showOverlay = isFirstLoad || isTransitioning;
-
-	// Auto-wrap block-level children for animation
-	const animatedChildren = Children.map(children, (child, index) => {
-		if (isValidElement(child)) {
-			return (
-				<motion.div
-					key={index}
-					variants={fadeInUp}
-					initial="hidden"
-					animate={index === 0 ? 'visible' : undefined} // First section animates immediately
-					whileInView={index > 0 ? 'visible' : undefined} // Others animate on scroll
-					viewport={{ once: true, amount: 0.8 }}
-				>
-					{child}
-				</motion.div>
-			);
-		}
-		return child;
-	});
 
 	return (
 		<>
@@ -71,15 +37,15 @@ export default function PageTransition({ children }: PageTransitionProps) {
 			<AnimatePresence>
 				{showOverlay && (
 					<motion.div
-						className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-primary text-light"
+						className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-primary-dark text-light"
 						initial={{ opacity: 1 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
-						transition={{ duration: 0.4, ease: easeInOut }}
+						transition={{ duration: 0.4 }}
 					>
 						<div className="animate-pulse-slow">
 							<Image
-								src="/logo.png"
+								src="/logo.png" // replace with your actual logo in /public
 								alt="Kaka Memorial Foundation Logo"
 								width={120}
 								height={120}
@@ -93,18 +59,17 @@ export default function PageTransition({ children }: PageTransitionProps) {
 				)}
 			</AnimatePresence>
 
-			{/* Page fade-in */}
+			{/* Page Content Fade/Slide */}
 			<AnimatePresence mode="wait">
 				<motion.div
 					key={pathname}
-					initial="hidden"
-					animate="visible"
+					initial={{ opacity: 0, y: 10 }}
+					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: -10 }}
-					variants={staggerContainer}
-					transition={{ duration: 0.4, ease: easeInOut }}
+					transition={{ duration: 0.4, ease: 'easeInOut' }}
 					className="min-h-screen"
 				>
-					{animatedChildren}
+					{children}
 				</motion.div>
 			</AnimatePresence>
 		</>
