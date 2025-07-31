@@ -13,7 +13,7 @@ const MissionVisionSection: React.FC<MissionVisionSectionProps> = ({
 	bodyFontClass = '',
 }) => {
 	return (
-		<section className="w-full bg-light py-20 px-6 md:px-16">
+		<section id='Mission-Vision' className="w-full bg-light py-20 px-6 md:px-16">
 			<div className="w-full max-w-7xl mx-auto flex flex-col gap-16">
 				{/* Section Title */}
 				<div className="text-center flex flex-col items-center gap-2">

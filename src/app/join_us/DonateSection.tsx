@@ -114,11 +114,16 @@ const DonateSection: React.FC = () => {
 							Donate {typeof amount === 'number' ? `$${amount}` : 'Now'}{' '}
 							{frequency}
 						</button>
+						<div className="mt-4">
+							<PayPalPayment
+								amount={typeof amount === 'number' ? amount : 10}
+							/>
+						</div>
 					</form>
 				</div>
 			</div>
 
-			<PayPalPayment />
+
 			{/* Right: Contact Info */}
 			<div className="w-full lg:w-1/3 flex flex-col justify-evenly items-center text-center bg-accent-three text-primary px-6 py-10 space-y-12">
 				<div>

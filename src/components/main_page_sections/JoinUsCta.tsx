@@ -51,13 +51,13 @@ const JoinUsSection: React.FC<JoinUsProps> = ({
 					<div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mt-4">
 						<Link
 							href="/join_us#volunteer"
-							className="bg-secondary text-white text-base px-6 py-3 rounded-sm font-semibold shadow hover:bg-secondary/90 transition"
+							className="bg-secondary text-white text-base px-6 py-3 rounded-sm font-semibold shadow hover:scale-x-105 transition-all duration-300"
 						>
 							Become a Volunteer
 						</Link>
 						<Link
 							href="/join_us#donate"
-							className="bg-primary text-white text-base px-6 py-3 rounded-sm font-semibold shadow hover:bg-primary/90 transition flex items-center gap-2"
+							className="bg-primary text-white text-base px-6 py-3 rounded-sm font-semibold shadow hover:scale-x-105  flex items-center gap-2 transition-all duration-300"
 						>
 							Donate Now
 						</Link>

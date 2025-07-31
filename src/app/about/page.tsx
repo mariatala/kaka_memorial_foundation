@@ -29,12 +29,16 @@ const AboutPage = () => {
 			{/* Our History Section */}
 			<section>
 				<History />
+			</section>
+			<section>
+				{/* Team Section */}
 				<TeamSection
 					gowunFontClass={gowun.className}
 					niconneFontClass={niconne.className}
 					titleFontClass={gowun.className}
 				/>
-				;
+			</section>
+			<section>
 				<MissionVisionSection
 					titleFontClass={gowun.className}
 					bodyFontClass={inter.className}

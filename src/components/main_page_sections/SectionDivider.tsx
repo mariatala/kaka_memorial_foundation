@@ -11,8 +11,8 @@ const SectionDivider = () => {
 		<div className="w-full flex flex-col md:flex-row items-stretch justify-between">
 			{/* Mission */}
 			<Link
-				href="/about"
-				className="group w-full md:flex-1 h-full px-10 md:px-16  py-8 bg-secondary transition-all duration-300 hover:shadow-xl hover:scale-[1.02] text-white text-center flex flex-col items-center justify-center"
+				href="/join_us#mission-vision"
+				className="group w-full md:flex-1 h-full px-10 md:px-16  py-8 bg-secondary transition-all duration-300  hover:shadow-xl hover:scale-[1.07] text-white text-center flex flex-col items-center justify-center"
 			>
 				<h3
 					className={`text-xl md:text-2xl font-medium ${inter.className} tracking-wide group-hover:underline underline-offset-4`}
@@ -29,7 +29,7 @@ const SectionDivider = () => {
 			{/* Events */}
 			<Link
 				href="/events"
-				className="group w-full md:flex-1 h-full px-10 md:px-16 py-8 bg-primary transition-all duration-300 hover:shadow-xl hover:scale-[1.02] text-white text-center flex flex-col items-center justify-center"
+				className="group w-full md:flex-1 h-full px-10 md:px-16 py-8 bg-primary transition-all duration-300 hover:shadow-xl hover:scale-[1.07] text-white text-center flex flex-col items-center justify-center"
 			>
 				<h3
 					className={`text-xl md:text-2xl font-medium ${inter.className} tracking-wide group-hover:underline underline-offset-4`}
@@ -46,7 +46,7 @@ const SectionDivider = () => {
 			{/* Get Involved */}
 			<Link
 				href="/join_us"
-				className="group w-full md:flex-1 h-full px-10 md:px-16  py-8 bg-accent-two  transition-all duration-300 hover:shadow-xl hover:scale-[1.02] text-white text-center flex flex-col items-center justify-center"
+				className="group w-full md:flex-1 h-full px-10 md:px-16  py-8 bg-accent-two  transition-all duration-300 hover:shadow-xl hover:scale-[1.07] text-white text-center flex flex-col items-center justify-center"
 			>
 				<h3
 					className={`text-xl md:text-2xl font-medium ${inter.className} tracking-wide group-hover:underline underline-offset-4`}

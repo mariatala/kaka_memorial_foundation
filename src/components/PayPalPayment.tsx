@@ -1,6 +1,6 @@
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 
-export default function PayPalPayment() {
+export default function PayPalPayment( { amount = 10 }: { amount?: number }) {
 	return (
 		<>
 			<PayPalScriptProvider
@@ -21,7 +21,7 @@ export default function PayPalPayment() {
 								{
 									amount: {
 										currency_code: 'USD',
-										value: '10.00', // Default to $10
+										value: amount.toFixed(2), // Default to $10
 									},
 								},
 							],

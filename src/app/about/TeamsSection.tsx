@@ -117,6 +117,15 @@ const TeamSection: React.FC<TeamSectionProps> = ({
 						gowunFontClass={gowunFontClass}
 						niconneFontClass={niconneFontClass}
 					/>
+					<TeamMemberCard
+						imageSrc="/team/Abdulbaki_Ibrahim_Gani.jpeg"
+						altText="Team member - Finance Officer"
+						description="I  support the day-to-day field activities of the Kaka Memorial Foundation by ensuring smooth delivery of materials, coordination of transport, and on-site assistance during outreach programs. This role requires flexibility, reliability, and a strong commitment to community service"
+						name="Abdulbaki Ibrahim Gani"
+						role="Ground Operations and Logistics Assistant"
+						gowunFontClass={gowunFontClass}
+						niconneFontClass={niconneFontClass}
+					/>
 				</div>
 			</div>
 		</section>

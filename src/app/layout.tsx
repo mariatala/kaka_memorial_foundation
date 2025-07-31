@@ -1,6 +1,7 @@
 import { Nunito } from 'next/font/google';
 
 import './globals.css';
+import PageTransition from '@/components/PageTransition';
 import Providers from '@/components/Providers';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
@@ -25,7 +26,9 @@ export default async function RootLayout({
 			<body className={`${nunito.variable} ${nunito.variable} antialiased`}>
 				<Providers session={session}>
 					<Header />
-					<main> {children}</main>
+					<PageTransition>
+						<main> {children}</main>
+					</PageTransition>
 					<Footer />
 				</Providers>
 			</body>

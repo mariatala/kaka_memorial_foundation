@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import Header from '@/components/Header'; // Make sure the path is correct
 import { FaFacebook } from 'react-icons/fa';
-import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa6';
+import { FaXTwitter } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa';
 import { Inter } from 'next/font/google';
 const inter = Inter({
@@ -20,39 +21,37 @@ const HeroSection = () => {
 			{/* Gradient Overlay */}
 			<div className="absolute inset-0 bg-gradient-to-b from-primary-dark/40 to-primary-dark/100 z-0" />
 
-			
-
 			{/* Hero Content */}
 			<div className="relative z-10  h-full flex flex-col-reverse gap-8 md:flex-row items-center mt-16 justify-center  md:justify-between text-justify py-32">
 				{/* Social Icons */}
 				<div className="social-icons p-3 md:bg-secondary mx-4 rounded-sm flex flex-row md:flex-col items-center justify-center gap-6">
 					<Link
-						href="https://www.facebook.com/kakamemorialfoundation"
+						href="https://www.facebook.com/profile.php?id=100088330151858"
 						target="_blank"
 						className=" text-secondary md:text-white hover:text-accent-three md:hover:text-primary transition-colors duration-300 ease-in-out"
 					>
 						<FaFacebook className="size-6" />
 					</Link>
 					<Link
-						href="https://www.instagram.com/kakamemorialfoundation/"
+						href="https://www.instagram.com/kakamfoundation/"
 						target="_blank"
 						className="text-secondary md:text-white hover:text-accent-three md:hover:text-primary transition-colors duration-300 ease-in-out"
 					>
 						<FaInstagram className="size-6" />
 					</Link>
-					<Link
+					{/* <Link
 						href="https://www.linkedin.com/company/kaka-memorial-foundation/"
 						target="_blank"
 						className="text-secondary md:text-white hover:text-accent-three md:hover:text-primary transition-colors duration-300 ease-in-out"
 					>
 						<FaLinkedin className="size-6" />
-					</Link>
+					</Link> */}
 					<Link
-						href="https://www.linkedin.com/company/kaka-memorial-foundation/"
+						href="https://x.com/KakaMFoundation"
 						target="_blank"
 						className="text-secondary md:text-white hover:text-accent-three md:hover:text-primary transition-colors duration-300 ease-in-out"
 					>
-						<FaTwitter className="size-6" />
+						<FaXTwitter className="size-6" />
 					</Link>
 				</div>
 
