@@ -4,7 +4,7 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions }       from '@/lib/auth';
 import { prisma }            from '@/lib/prisma';
 
-export async function DELETE(request: Request) {
+export async function DELETE(_request: Request) {
   // only admins (i.e. any signed-in user in this case) can delete
   const session = await getServerSession(authOptions);
   if (!session) {
