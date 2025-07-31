@@ -57,7 +57,7 @@ const ContactPage: React.FC = () => {
 			} else {
 				alert('Failed to send message. Please try again later.');
 			}
-		} catch (error) {
+		} catch (error: unknown) {
 			alert('An error occurred. Please try again later.');
 		}
 	};

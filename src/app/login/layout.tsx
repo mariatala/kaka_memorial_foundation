@@ -1,6 +1,5 @@
 'use client';
 import RegistrationFooter from '@/app/registrations/RegistrationFooter';
-import Header from '@/components/Header';
 
 export default function RegistrationLayout({
 	children,
