@@ -10,7 +10,7 @@ const inter = Inter({
 	subsets: ['latin'],
 });
 
-const HeroSection = () => {
+export default function HeroSection() {
 	return (
 		<section
 			className="relative w-full h-screen bg-cover bg-center"
@@ -72,4 +72,4 @@ const HeroSection = () => {
 	);
 };
 
-export default HeroSection;
+
